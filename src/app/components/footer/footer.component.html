@@ -1,0 +1,81 @@
+<footer class="relative bg-[#03050a] border-t border-cyan/10 font-mono overflow-hidden">
+
+    <!-- Grid background -->
+    <div class="absolute inset-0 pointer-events-none opacity-[0.03]"
+        style="background-image: linear-gradient(#00f5ff 1px, transparent 1px), linear-gradient(90deg, #00f5ff 1px, transparent 1px); background-size: 40px 40px;">
+    </div>
+
+    <!-- Glow orb -->
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] pointer-events-none"
+        style="background: radial-gradient(ellipse at center, rgba(0,245,255,0.04) 0%, transparent 70%);"></div>
+
+    <div class="relative max-w-[1400px] mx-auto px-6 pt-16 pb-8">
+
+        <!-- Top section -->
+        <div class="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-16 mb-16">
+
+            <!-- Left: Big CTA -->
+            <div>
+                <p class="text-cyan/40 text-[0.6rem] tracking-[0.3em] uppercase m-0 mb-4">// STATUS: AVAILABLE</p>
+                <h2 class="font-display text-snow m-0 leading-tight mb-6" style="font-size: clamp(2rem, 5vw, 3.5rem);">
+                    Got a project<br>
+                    <span class="text-cyan" style="text-shadow: 0 0 30px rgba(0,245,255,0.4);">in mind?</span>
+                </h2>
+                <a href="mailto:hello@jay.dev"
+                    class="inline-flex items-center gap-3 no-underline border border-cyan/40 text-cyan font-mono text-[0.7rem] tracking-[0.2em] uppercase px-6 py-3 transition-all duration-300 hover:border-cyan hover:shadow-[0_0_24px_rgba(0,245,255,0.2)] group">
+                    <span class="w-1.5 h-1.5 rounded-full bg-cyan animate-flicker shadow-[0_0_6px_#00f5ff]"></span>
+                    Initiate contact
+                    <svg class="w-3 h-3 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7v10" />
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Right: Links -->
+            <div class="flex gap-14">
+                <div>
+                    <p class="text-[0.55rem] tracking-[0.25em] text-cyan/30 uppercase m-0 mb-6">// Nav</p>
+                    <ul class="list-none m-0 p-0 flex flex-col gap-4">
+                        <li *ngFor="let link of navLinks; let i = index">
+                            <a [routerLink]="link.path"
+                                class="flex items-center gap-2 no-underline text-snow/30 text-xs tracking-widest uppercase transition-all duration-200 hover:text-cyan group">
+                                <span class="text-cyan/20 group-hover:text-cyan/60 transition-colors">{{ i < 9 ? '0'
+                                        : '' }}{{ i + 1 }}</span>
+                                        {{ link.label }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="text-[0.55rem] tracking-[0.25em] text-cyan/30 uppercase m-0 mb-6">// Links</p>
+                    <ul class="list-none m-0 p-0 flex flex-col gap-4">
+                        <li *ngFor="let social of socials">
+                            <a [href]="social.url" target="_blank" rel="noopener"
+                                class="flex items-center gap-2 no-underline text-snow/30 text-xs tracking-widest uppercase transition-all duration-200 hover:text-cyan group">
+                                <span class="text-cyan/20 group-hover:text-cyan/60 transition-colors">//</span>
+                                {{ social.label }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="h-px bg-gradient-to-r from-transparent via-cyan/20 to-transparent mb-6"></div>
+
+        <!-- Bottom bar -->
+        <div
+            class="flex flex-wrap items-center justify-between gap-4 text-[0.6rem] tracking-widest text-snow/20 uppercase">
+            <span>© {{ currentYear }} JAY_DEV — All rights reserved</span>
+            <div class="flex items-center gap-4">
+                <span class="text-cyan/30">Built_with:</span>
+                <span class="text-cyan/60 border border-cyan/20 px-2 py-0.5">Angular</span>
+                <span class="text-cyan/60 border border-cyan/20 px-2 py-0.5">Tailwind</span>
+                <span class="text-cyan/60 border border-cyan/20 px-2 py-0.5">TypeScript</span>
+            </div>
+        </div>
+
+    </div>
+</footer>

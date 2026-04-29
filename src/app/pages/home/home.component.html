@@ -1,0 +1,230 @@
+<!-- ═══════════════════════════════════════════════════ HOME PAGE ══ -->
+<section class="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#03050a]">
+
+    <!-- Grid background -->
+    <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(0,245,255,0.03) 1px, transparent 1px),
+                                 linear-gradient(90deg, rgba(0,245,255,0.03) 1px, transparent 1px);
+              background-size: 60px 60px;"></div>
+
+    <!-- Radial glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none"
+        style="background: radial-gradient(circle, rgba(0,245,255,0.04) 0%, transparent 70%);"></div>
+
+    <!-- Corner decorations -->
+    <div class="absolute top-24 left-8 font-mono text-[0.55rem] text-cyan/20 tracking-widest leading-relaxed">
+        SYS://PORTFOLIO_V2<br>
+        STATUS::ONLINE<br>
+        LOC::TH/BKK
+    </div>
+    <div
+        class="absolute top-24 right-8 font-mono text-[0.55rem] text-cyan/20 tracking-widest text-right leading-relaxed">
+        NODE::FRONTEND<br>
+        STACK::NEXT_TS<br>
+        UPTIME::∞
+    </div>
+
+    <!-- Main content -->
+    <div class="relative w-full max-w-[1400px] mx-auto px-6 pt-32 pb-20">
+        <div class="grid lg:grid-cols-[1fr_auto] gap-12 xl:gap-20 items-center">
+
+            <!-- LEFT: text -->
+            <div>
+                <!-- Pre-title -->
+                <div class="flex items-center gap-3 mb-6 animate-fade-in-up" style="animation-delay:0.1s">
+                    <span class="block w-8 h-px bg-cyan/50"></span>
+                    <span class="font-mono text-cyan text-[0.65rem] tracking-[0.35em] uppercase">Initializing...</span>
+                </div>
+
+                <!-- Name -->
+                <h1 class="font-display font-black uppercase leading-none mb-2 animate-fade-in-up"
+                    style="animation-delay:0.2s">
+                    <span class="block text-snow"
+                        style="font-size:clamp(2.8rem,8vw,7rem); letter-spacing:-0.02em; text-shadow: 0 0 80px rgba(0,245,255,0.12);">
+                        PEERAPAT
+                    </span>
+                    <span class="block" style="font-size:clamp(2.8rem,8vw,7rem); letter-spacing:-0.02em;
+                       -webkit-text-stroke: 1px rgba(0,245,255,0.4); color:transparent;">
+                        KALLABUT
+                    </span>
+                </h1>
+
+                <!-- Role typewriter -->
+                <div class="flex items-center gap-2 mb-10 animate-fade-in-up" style="animation-delay:0.35s">
+                    <span class="font-mono text-cyan/40 text-sm">&gt;</span>
+                    <span class="font-mono text-cyan text-sm md:text-base tracking-widest" id="typewriter">Web
+                        Developer</span>
+                    <span class="inline-block w-0.5 h-4 bg-cyan animate-pulse"></span>
+                </div>
+
+                <!-- Description -->
+                <p class="max-w-xl font-mono text-snow/40 text-[0.75rem] leading-relaxed tracking-wide mb-12 animate-fade-in-up"
+                    style="animation-delay:0.45s">
+                    Full-process developer · System analysis · DB design ·<br>
+                    Backend API · Frontend implementation · 2 yrs exp.
+                </p>
+
+                <!-- CTAs -->
+                <div class="flex flex-wrap items-center gap-4 animate-fade-in-up" style="animation-delay:0.55s">
+                    <a [routerLink]="['/projects']"
+                        class="relative overflow-hidden flex items-center gap-2 no-underline border border-cyan text-[#03050a] bg-cyan font-mono text-[0.7rem] tracking-[0.2em] uppercase px-7 py-3 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,245,255,0.5)] group">
+                        <span>View Projects</span>
+                        <svg class="w-3 h-3 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="2.5">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a [routerLink]="['/about']"
+                        class="relative overflow-hidden flex items-center gap-2 no-underline border border-cyan/30 text-cyan font-mono text-[0.7rem] tracking-[0.2em] uppercase px-7 py-3 transition-all duration-300 hover:border-cyan hover:shadow-[0_0_20px_rgba(0,245,255,0.15)] group">
+                        <span>About Me</span>
+                        <span
+                            class="absolute inset-0 bg-cyan/5 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></span>
+                    </a>
+                </div>
+
+                <!-- Tech stack pills -->
+                <div class="flex flex-wrap gap-2 mt-16 animate-fade-in-up" style="animation-delay:0.7s">
+                    <span *ngFor="let tech of techStack"
+                        class="font-mono text-[0.6rem] tracking-[0.2em] uppercase px-3 py-1 border border-snow/10 text-snow/30 hover:border-cyan/40 hover:text-cyan/70 transition-all duration-200 cursor-default">
+                        {{ tech }}
+                    </span>
+                </div>
+            </div>
+
+            <!-- RIGHT: profile image -->
+            <div class="hidden lg:flex justify-center items-center animate-fade-in-up" style="animation-delay:0.3s">
+                <div class="relative w-[360px] xl:w-[420px]">
+
+                    <!-- Corner brackets -->
+                    <div class="absolute -top-3 -left-3 w-7 h-7 border-t-2 border-l-2 border-cyan/70 z-10"></div>
+                    <div class="absolute -top-3 -right-3 w-7 h-7 border-t-2 border-r-2 border-cyan/70 z-10"></div>
+                    <div class="absolute -bottom-3 -left-3 w-7 h-7 border-b-2 border-l-2 border-cyan/70 z-10"></div>
+                    <div class="absolute -bottom-3 -right-3 w-7 h-7 border-b-2 border-r-2 border-cyan/70 z-10"></div>
+
+                    <!-- Image container -->
+                    <div class="relative overflow-hidden border border-cyan/20"
+                        style="box-shadow: 0 0 60px rgba(0,245,255,0.1), 0 0 120px rgba(0,245,255,0.04);">
+
+                        <!-- Scan line overlay -->
+                        <div class="absolute inset-0 pointer-events-none z-10 overflow-hidden">
+                            <div class="absolute left-0 right-0 h-[2px] bg-cyan/10"
+                                style="animation: scanline 4s linear infinite;"></div>
+                        </div>
+
+                        <!-- Cyan tint overlay -->
+                        <div class="absolute inset-0 z-10 pointer-events-none"
+                            style="background: linear-gradient(180deg, rgba(0,245,255,0.03) 0%, transparent 50%, rgba(0,0,0,0.35) 100%);">
+                        </div>
+
+                        <img src="jay5.png" alt="Peerapat Kallabut"
+                            class="w-full h-auto block object-cover grayscale"
+                            style="filter: grayscale(20%) contrast(1.05) brightness(0.9);" />
+                    </div>
+
+                    <!-- Label underneath -->
+                    <div class="mt-3 flex items-center justify-between px-1">
+                        <span class="font-mono text-[0.5rem] text-cyan/30 tracking-[0.3em] uppercase">ID::PKB_DEV</span>
+                        <span
+                            class="flex items-center gap-1.5 font-mono text-[0.5rem] text-cyan/50 tracking-widest uppercase">
+                            <span class="w-1 h-1 rounded-full bg-cyan shadow-[0_0_4px_#00f5ff] animate-pulse"></span>
+                            Active
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /grid -->
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce-slow">
+        <span class="font-mono text-[0.5rem] text-cyan/30 tracking-[0.4em] uppercase">Scroll</span>
+        <div class="w-px h-8 bg-gradient-to-b from-cyan/30 to-transparent"></div>
+    </div>
+
+    <!-- Bottom stats bar -->
+    <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan/20 to-transparent">
+    </div>
+    <div class="absolute bottom-4 right-8 font-mono text-[0.5rem] text-cyan/15 tracking-widest">
+        PKB::DEV · 2024
+    </div>
+</section>
+
+<!-- ═══════════ STATS STRIP ══ -->
+<section class="relative bg-[#03050a] border-y border-cyan/10 py-10 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none"
+        style="background:linear-gradient(90deg, transparent, rgba(0,245,255,0.02), transparent)"></div>
+    <div class="w-full max-w-[1400px] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div *ngFor="let stat of stats" class="flex flex-col items-center gap-1 group">
+            <span
+                class="font-display font-black text-cyan text-3xl md:text-4xl group-hover:text-shadow-cyan transition-all"
+                style="text-shadow: 0 0 20px rgba(0,245,255,0.3);">
+                {{ stat.value }}
+            </span>
+            <span class="font-mono text-[0.6rem] tracking-[0.25em] uppercase text-snow/30">{{ stat.label }}</span>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════ FEATURED PROJECTS PREVIEW ══ -->
+<section class="relative bg-[#03050a] py-24 overflow-hidden">
+    <div class="w-full max-w-[1400px] mx-auto px-6">
+
+        <div class="flex items-center justify-between mb-14">
+            <div>
+                <div class="flex items-center gap-3 mb-3">
+                    <span class="block w-6 h-px bg-cyan/50"></span>
+                    <span class="font-mono text-cyan/60 text-[0.6rem] tracking-[0.35em] uppercase">Featured Work</span>
+                </div>
+                <h2 class="font-display font-black text-snow text-3xl md:text-4xl uppercase tracking-tight">Recent
+                    Projects</h2>
+            </div>
+            <a [routerLink]="['/projects']"
+                class="hidden md:flex items-center gap-2 no-underline font-mono text-[0.65rem] text-cyan/50 tracking-[0.2em] uppercase hover:text-cyan transition-colors">
+                All Projects <span>→</span>
+            </a>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+            <a *ngFor="let proj of featuredProjects; let i = index" [routerLink]="['/projects', proj.id]"
+                class="no-underline group relative border border-snow/10 hover:border-cyan/40 bg-[#060a0f] p-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,245,255,0.06)] overflow-hidden">
+
+                <!-- Corner bracket -->
+                <div
+                    class="absolute top-0 left-0 w-4 h-4 border-t border-l border-cyan/40 group-hover:border-cyan transition-colors duration-300">
+                </div>
+                <div
+                    class="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-cyan/40 group-hover:border-cyan transition-colors duration-300">
+                </div>
+
+                <div class="flex items-start justify-between mb-6">
+                    <span class="font-mono text-[0.55rem] text-cyan/40 tracking-widest">PROJECT_{{ i < 9 ? '0' : '' }}{{
+                            i+1 }}</span>
+                            <span class="font-mono text-[0.55rem] text-snow/20 tracking-wider">{{ proj.stack[0]
+                                }}</span>
+                </div>
+
+                <h3
+                    class="font-display font-black text-snow text-xl uppercase tracking-tight mb-3 group-hover:text-cyan transition-colors duration-300">
+                    {{ proj.name }}
+                </h3>
+                <p class="font-mono text-snow/40 text-[0.7rem] leading-relaxed mb-6">{{ proj.desc }}</p>
+
+                <div class="flex flex-wrap gap-2">
+                    <span *ngFor="let t of proj.stack"
+                        class="font-mono text-[0.55rem] tracking-widest uppercase px-2 py-0.5 border border-cyan/20 text-cyan/50">
+                        {{ t }}
+                    </span>
+                </div>
+
+                <!-- Hover arrow -->
+                <div
+                    class="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                    <svg class="w-4 h-4 text-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7v10" />
+                    </svg>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>

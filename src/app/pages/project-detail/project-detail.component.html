@@ -1,0 +1,148 @@
+<!-- ═══════════════════════════════════════════════════ PROJECT DETAIL ══ -->
+<div class="relative min-h-screen bg-[#03050a] pt-[68px] overflow-hidden" *ngIf="project">
+
+    <!-- Grid bg -->
+    <div class="absolute inset-0 pointer-events-none opacity-40" style="background-image: linear-gradient(rgba(0,245,255,0.025) 1px, transparent 1px),
+                                 linear-gradient(90deg, rgba(0,245,255,0.025) 1px, transparent 1px);
+              background-size: 60px 60px;"></div>
+
+    <!-- Hero glow -->
+    <div class="absolute top-[68px] left-0 right-0 h-64 pointer-events-none"
+        style="background:linear-gradient(180deg, rgba(0,245,255,0.04) 0%, transparent 100%)"></div>
+
+    <div class="relative w-full max-w-[1400px] mx-auto px-6 py-20">
+
+        <!-- Breadcrumb -->
+        <div class="flex items-center gap-2 mb-12 font-mono text-[0.6rem] tracking-widest">
+            <a [routerLink]="['/projects']"
+                class="text-snow/30 hover:text-cyan transition-colors no-underline uppercase">Projects</a>
+            <span class="text-snow/15">›</span>
+            <span class="text-cyan/60 uppercase">{{ project.name }}</span>
+        </div>
+
+        <!-- ── Main layout ── -->
+        <div class="grid lg:grid-cols-[1fr_320px] gap-12 xl:gap-20 items-start">
+
+            <!-- LEFT -->
+            <div class="space-y-10">
+
+                <!-- Title block -->
+                <div class="relative border border-snow/10 p-8 bg-[#060a0f]">
+                    <div class="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-cyan/60"></div>
+                    <div class="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-cyan/60"></div>
+
+                    <div class="flex items-start justify-between gap-4 mb-4">
+                        <span class="font-mono text-[0.55rem] text-cyan/40 tracking-widest">{{ projectIndex }}</span>
+                        <span class="font-mono text-[0.55rem] tracking-widest uppercase px-2 py-0.5 border"
+                            [ngClass]="project.status === 'Completed' ? 'border-cyan/30 text-cyan/60' : 'border-yellow-500/30 text-yellow-400/60'">
+                            {{ project.status }}
+                        </span>
+                    </div>
+
+                    <h1 class="font-display font-black text-snow uppercase tracking-tight mb-4"
+                        style="font-size:clamp(1.8rem,4vw,3.2rem);">
+                        {{ project.name }}
+                    </h1>
+                    <p class="font-mono text-snow/50 text-[0.8rem] leading-relaxed">{{ project.desc }}</p>
+                </div>
+
+                <!-- Features / Highlights -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="font-mono text-cyan/60 text-[0.6rem] tracking-[0.35em] uppercase">Features</span>
+                        <span class="flex-1 h-px bg-cyan/10"></span>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div *ngFor="let hl of project.highlights; let i = index"
+                            class="flex items-start gap-4 border border-snow/10 bg-[#060a0f] p-5 hover:border-cyan/20 transition-colors duration-200 group">
+                            <span
+                                class="font-mono text-cyan/30 text-[0.6rem] mt-0.5 shrink-0 group-hover:text-cyan/60 transition-colors">{{
+                                i < 9 ? '0' : '' }}{{ i+1 }}</span>
+                                    <p
+                                        class="font-mono text-snow/50 text-[0.72rem] leading-relaxed group-hover:text-snow/70 transition-colors">
+                                        {{ hl }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tech Stack section -->
+                <div>
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="font-mono text-cyan/60 text-[0.6rem] tracking-[0.35em] uppercase">Tech Stack</span>
+                        <span class="flex-1 h-px bg-cyan/10"></span>
+                    </div>
+
+                    <div class="flex flex-wrap gap-3">
+                        <div *ngFor="let t of project.stack"
+                            class="flex items-center gap-2 border border-cyan/20 bg-[#060a0f] px-4 py-2.5 hover:border-cyan/50 hover:shadow-[0_0_15px_rgba(0,245,255,0.08)] transition-all duration-200">
+                            <span class="w-1.5 h-1.5 rounded-full bg-cyan/60 shadow-[0_0_4px_#00f5ff]"></span>
+                            <span class="font-mono text-[0.65rem] tracking-[0.2em] uppercase text-cyan/70">{{ t
+                                }}</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /LEFT -->
+
+            <!-- RIGHT: sidebar -->
+            <div class="lg:sticky lg:top-24 space-y-5">
+
+                <!-- Project meta -->
+                <div class="border border-cyan/30 bg-[#060a0f] p-6 relative overflow-hidden"
+                    style="box-shadow:0 0 30px rgba(0,245,255,0.03)">
+                    <div
+                        class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan/50 to-transparent">
+                    </div>
+                    <div class="font-mono text-[0.55rem] text-cyan/40 tracking-widest mb-5 uppercase">//
+                        project_meta.json</div>
+
+                    <div class="space-y-4">
+                        <div *ngFor="let meta of projectMeta" class="flex flex-col gap-0.5">
+                            <span class="font-mono text-[0.55rem] text-snow/25 tracking-[0.3em] uppercase">{{ meta.key
+                                }}</span>
+                            <span class="font-mono text-[0.72rem] text-snow/60">{{ meta.value }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation: prev / next -->
+                <div class="grid grid-cols-2 gap-3">
+                    <a *ngIf="prevProject" [routerLink]="['/projects', prevProject.id]"
+                        class="no-underline flex flex-col gap-1 border border-snow/10 bg-[#060a0f] p-4 hover:border-cyan/30 transition-all group">
+                        <span class="font-mono text-[0.5rem] text-snow/25 tracking-widest uppercase">← Prev</span>
+                        <span
+                            class="font-mono text-[0.6rem] text-snow/50 group-hover:text-cyan transition-colors leading-tight">{{
+                            prevProject.name }}</span>
+                    </a>
+                    <div *ngIf="!prevProject"></div>
+
+                    <a *ngIf="nextProject" [routerLink]="['/projects', nextProject.id]"
+                        class="no-underline flex flex-col gap-1 border border-snow/10 bg-[#060a0f] p-4 hover:border-cyan/30 transition-all group text-right">
+                        <span class="font-mono text-[0.5rem] text-snow/25 tracking-widest uppercase">Next →</span>
+                        <span
+                            class="font-mono text-[0.6rem] text-snow/50 group-hover:text-cyan transition-colors leading-tight">{{
+                            nextProject.name }}</span>
+                    </a>
+                </div>
+
+                <!-- Back button -->
+                <a [routerLink]="['/projects']"
+                    class="flex items-center justify-center gap-2 no-underline border border-snow/10 text-snow/30 font-mono text-[0.65rem] tracking-[0.2em] uppercase py-3 hover:border-cyan/30 hover:text-cyan transition-all">
+                    ← All Projects
+                </a>
+
+            </div><!-- /RIGHT -->
+        </div>
+    </div>
+</div>
+
+<!-- Not found -->
+<div *ngIf="!project" class="min-h-screen bg-[#03050a] flex flex-col items-center justify-center pt-[68px]">
+    <div class="font-display font-black text-cyan/20 text-8xl mb-4">404</div>
+    <p class="font-mono text-snow/30 text-sm tracking-widest mb-8">PROJECT_NOT_FOUND</p>
+    <a [routerLink]="['/projects']"
+        class="no-underline border border-cyan/40 text-cyan font-mono text-[0.65rem] tracking-[0.2em] uppercase px-6 py-2.5 hover:border-cyan transition-all">
+        ← Back to Projects
+    </a>
+</div>

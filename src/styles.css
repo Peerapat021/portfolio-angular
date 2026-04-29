@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Share+Tech+Mono&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    background-color: #03050a;
+    color: #e2eeff;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+/* ─── Add these to your global styles.css ─────────────────────────── */
+
+/* Animate utilities (add to tailwind.config or use CSS directly) */
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce-slow {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(8px); }
+}
+
+@keyframes scanline {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(100vh); }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.6s ease both;
+  opacity: 0;
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 2.5s ease-in-out infinite;
+}
+
+.animate-scanline {
+  animation: scanline 6s linear infinite;
+}
+
+/* Font: add to index.html <head> */
+/*
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+*/
+
+/* ─── tailwind.config.ts additions ────────────────────────────────── */
+/*
+theme: {
+  extend: {
+    colors: {
+      cyan:  '#00f5ff',
+      snow:  '#e8f4f8',
+    },
+    fontFamily: {
+      display: ['"Space Grotesk"', 'sans-serif'],
+      mono:    ['"JetBrains Mono"', 'monospace'],
+    },
+  }
+}
+*/
+
+/* ─── app.routes.ts ────────────────────────────────────────────────── */
+/*
+import { Routes } from '@angular/router';
+
+export const routes: Routes = [
+  { path: '',         redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home',     loadComponent: () => import('./pages/home/home.component').then(m => m.HomeComponent) },
+  { path: 'about',    loadComponent: () => import('./pages/about/about.component').then(m => m.AboutComponent) },
+  { path: 'projects', loadComponent: () => import('./pages/projects/projects.component').then(m => m.ProjectsComponent) },
+  { path: 'projects/:id', loadComponent: () => import('./pages/project-detail/project-detail.component').then(m => m.ProjectDetailComponent) },
+  { path: '**',       redirectTo: 'home' },
+];
+*/
+
+/* ─── nav links (navbar.component.ts) ─────────────────────────────── */
+/*
+navLinks = [
+  { label: 'Home',     path: '/home' },
+  { label: 'About',    path: '/about' },
+  { label: 'Projects', path: '/projects' },
+];
+*/

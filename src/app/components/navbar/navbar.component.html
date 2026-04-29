@@ -1,0 +1,100 @@
+<nav class="fixed top-0 left-0 right-0 z-50 h-[68px] flex items-center"
+    [ngClass]="{'bg-[#03050a]/80 backdrop-blur-md': isScrolled}">
+    <!-- top edge glow line -->
+    <div class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan/60 to-transparent"></div>
+    <!-- bottom border -->
+    <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan/20 to-transparent">
+    </div>
+
+    <div class="w-full max-w-[1400px] mx-auto px-6 flex items-center gap-8">
+
+        <!-- Logo -->
+        <a [routerLink]="['/']" (click)="closeMenu()" class="mr-auto flex items-center gap-3 no-underline group">
+            <!-- bracket icon -->
+            <div class="relative w-8 h-8 flex items-center justify-center">
+                <div
+                    class="absolute inset-0 border border-cyan/40 rotate-45 group-hover:rotate-[225deg] transition-transform duration-700">
+                </div>
+                <span class="font-display text-cyan text-[0.6rem] font-black tracking-widest">J</span>
+            </div>
+            <div class="flex flex-col leading-none">
+                <span
+                    class="font-display text-snow text-[0.75rem] font-black tracking-[0.25em] uppercase group-hover:text-cyan transition-colors duration-300">JAY</span>
+                <span class="font-mono text-cyan/50 text-[0.45rem] tracking-[0.3em] uppercase">Portfolio_v2</span>
+            </div>
+        </a>
+
+        <!-- Desktop Links -->
+        <ul class="hidden md:flex list-none m-0 p-0 items-center gap-0">
+            <li *ngFor="let link of navLinks; let i = index">
+                <a [routerLink]="link.path" routerLinkActive="!text-cyan"
+                    class="relative flex items-center gap-2 no-underline px-5 py-2 font-mono text-[0.7rem] tracking-[0.2em] uppercase text-snow/40 transition-all duration-200 hover:text-cyan group">
+                    <span class="text-cyan/30 text-[0.55rem] group-hover:text-cyan/70 transition-colors">{{ i < 9 ? '0'
+                            : '' }}{{ i + 1 }}</span>
+                            {{ link.label }}
+                            <!-- active/hover underline -->
+                            <span
+                                class="absolute bottom-0 left-5 right-5 h-px bg-cyan scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- Status indicator -->
+        <div class="hidden md:flex items-center gap-2 font-mono text-[0.6rem] tracking-widest text-snow/25 uppercase">
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan animate-flicker shadow-[0_0_6px_#00f5ff]"></span>
+            Online
+        </div>
+
+        <!-- CTA -->
+        <a href="mailto:hello@jay.dev" class="hidden md:flex items-center gap-2 no-underline relative overflow-hidden
+              border border-cyan/50 text-cyan font-mono text-[0.65rem] tracking-[0.2em] uppercase
+              px-5 py-2 transition-all duration-300
+              hover:border-cyan hover:shadow-[0_0_20px_rgba(0,245,255,0.25)] hover:text-white group">
+            <span class="relative z-10">Contact</span>
+            <svg class="w-3 h-3 relative z-10 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M7 17L17 7M17 7H7M17 7v10" />
+            </svg>
+            <!-- fill sweep on hover -->
+            <span
+                class="absolute inset-0 bg-cyan/10 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></span>
+        </a>
+
+        <!-- Hamburger -->
+        <button
+            class="md:hidden w-9 h-9 flex flex-col justify-center items-end gap-[5px] bg-transparent border-none cursor-pointer"
+            (click)="toggleMenu()" aria-label="Toggle menu">
+            <span class="h-px bg-cyan transition-all duration-300 origin-right shadow-[0_0_4px_#00f5ff]"
+                [ngClass]="{'w-6 rotate-[-45deg] translate-y-[9px]': isMenuOpen, 'w-6': !isMenuOpen}"></span>
+            <span class="h-px bg-cyan/60 transition-all duration-200"
+                [ngClass]="{'opacity-0 w-0': isMenuOpen, 'w-4': !isMenuOpen}"></span>
+            <span class="h-px bg-cyan transition-all duration-300 origin-right shadow-[0_0_4px_#00f5ff]"
+                [ngClass]="{'w-6 rotate-[45deg] -translate-y-[9px]': isMenuOpen, 'w-5': !isMenuOpen}"></span>
+        </button>
+
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="md:hidden absolute top-[68px] left-0 right-0 bg-[#03050a]/98 border-b border-cyan/20 overflow-hidden transition-all duration-300 origin-top"
+        [ngClass]="{'max-h-[400px] opacity-100': isMenuOpen, 'max-h-0 opacity-0': !isMenuOpen}">
+        <!-- scan line effect -->
+        <div class="absolute inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute left-0 right-0 h-[1px] bg-cyan/10 animate-scanline"></div>
+        </div>
+        <ul class="relative list-none m-0 px-6 py-4 flex flex-col">
+            <li *ngFor="let link of navLinks; let i = index" class="border-b border-cyan/10 last:border-0">
+                <a [routerLink]="link.path" routerLinkActive="text-cyan" (click)="closeMenu()"
+                    class="flex items-center gap-4 no-underline py-4 text-snow/50 font-mono text-sm tracking-widest uppercase transition-colors duration-200 hover:text-cyan">
+                    <span class="text-cyan/30 text-xs">{{ i < 9 ? '0' : '' }}{{ i + 1 }}_</span>
+                            {{ link.label }}
+                </a>
+            </li>
+            <li class="pt-4">
+                <a href="mailto:hello@jay.dev" (click)="closeMenu()"
+                    class="flex items-center justify-center no-underline border border-cyan/40 text-cyan font-mono text-xs tracking-widest uppercase py-3 transition-all hover:border-cyan hover:shadow-[0_0_14px_rgba(0,245,255,0.2)]">
+                    Contact ↗
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
