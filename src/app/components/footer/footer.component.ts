@@ -18,8 +18,8 @@ export class FooterComponent {
   ];
 
   socials = [
-    { label: 'GitHub', url: 'https://github.com', icon: 'GH' },
-    { label: 'LinkedIn', url: 'https://linkedin.com', icon: 'LI' },
-    { label: 'Twitter', url: 'https://twitter.com', icon: 'TW' },
+    { label: 'GitHub', url: 'https://github.com/Peerapat021', icon: 'GH' },
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/m-jay-179b16320/', icon: 'LI' },
+    { label: 'Line', url: 'https://line.me/ti/p/ifQioXpF1k', icon: 'LI' },
   ];
 }

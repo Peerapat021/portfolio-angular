@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
     { value: '2+', label: 'Years Experience' },
     { value: '4+', label: 'Projects Built' },
     { value: '6+', label: 'Languages' },
-    { value: '3+', label: 'Frameworks' },
+    { value: '5+', label: 'Frameworks' },
   ];
 
   featuredProjects = [

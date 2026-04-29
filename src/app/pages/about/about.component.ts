@@ -28,17 +28,17 @@ export class AboutComponent {
     {
       icon: '⚡',
       name: 'Frameworks',
-      skills: ['Next.js', 'Laravel', 'ASP.NET Core'],
+      skills: ['Next.js', 'Angular', 'React', 'Nuxt.js', 'Node.js', 'Laravel', 'ASP.NET Core', 'Spring Boot'],
     },
     {
       icon: '🎨',
       name: 'Frontend',
-      skills: ['HTML', 'CSS', 'Tailwind CSS', 'TypeScript'],
+      skills: ['HTML', 'CSS', 'Tailwind CSS', 'TypeScript', 'React', 'Next.js', 'Angular', 'Nuxt.js'],
     },
     {
       icon: '🔧',
       name: 'Tools',
-      skills: ['Git', 'GitHub', 'Docker', 'Postman', 'Navicat', 'Figma', 'VS Code', 'Windsurf'],
+      skills: ['Git', 'GitHub', 'Docker', 'Postman', 'Navicat', 'Figma', 'VS Code', 'Windsurf', 'IntelliJ IDEA'],
     },
   ];
 
