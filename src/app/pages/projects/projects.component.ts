@@ -25,7 +25,7 @@ export const ALL_PROJECTS: Project[] = [
     ],
     stack: ['Next.js', 'TypeScript', 'MySQL', 'Tailwind CSS'],
     status: 'Completed',
-    tags: ['Web App', 'Next.js', 'TypeScript'],
+    tags: ['Web App', 'Next.js', 'TypeScript', 'Docker'],
   },
   {
     id: 'pos-wms',
@@ -39,7 +39,7 @@ export const ALL_PROJECTS: Project[] = [
     ],
     stack: ['PHP', 'JavaScript', 'Tailwind CSS', 'MySQL'],
     status: 'Completed',
-    tags: ['Web App', 'PHP', 'Management'],
+    tags: ['Web App', 'PHP', 'Management', 'Docker'],
   },
   {
     id: 'qa-hub',
@@ -53,7 +53,7 @@ export const ALL_PROJECTS: Project[] = [
     ],
     stack: ['Python', 'LINE Messaging API'],
     status: 'Completed',
-    tags: ['Web App', 'Python', 'Platform'],
+    tags: ['Web App', 'Python', 'Platform', 'Docker'],
   },
   {
     id: 'motorcycle-sales',
@@ -67,7 +67,48 @@ export const ALL_PROJECTS: Project[] = [
     ],
     stack: ['Java', 'MySQL'],
     status: 'Completed',
-    tags: ['Management', 'Java'],
+    tags: ['Management', 'Java', 'Docker'],
+  },
+  {
+    id: 'discord-bot-saas',
+    name: 'Discord Bot SaaS Platform',
+    desc: 'SaaS platform for managing Discord bots with subscription and billing features.',
+    highlights: [
+      'Discord bot integration and management',
+      'Subscription and billing system',
+      'User authentication and role-based access',
+      'Database structure for bot and user data',
+    ],
+    stack: ['Next.js', 'MySQL' , 'Docker'],
+    status: 'Completed',
+    tags: ['SaaS', 'Next.js', 'Docker'],
+  },
+  {
+    id: 'expense-tracker',
+    name: 'Expense Tracker',
+    desc: 'Expense tracking application for monitoring personal or business expenses.',
+    highlights: [
+      'Expense tracking and categorization',
+      'User authentication and role-based access',
+      'Database structure for expense and user data',
+    ],
+    stack: ['Next.js', 'Supabase (PostgreSQL)', 'Docker'],
+    status: 'Completed',
+    tags: ['Web App', 'Next.js', 'Docker', 'Supabase'],
+  },
+  {
+    id: 'weka',
+    name: 'WEKA',
+    desc: 'WEKA is a machine learning tool for data mining tasks.',
+    highlights: [
+      'Machine learning algorithms and models',
+      'Data preprocessing and feature selection',
+      'Model evaluation and validation',
+      'Database structure for machine learning data',
+    ],
+    stack: ['WEKA'],
+    status: 'Completed',
+    tags: ['WEKA'],
   },
 ];
 
@@ -78,7 +119,7 @@ export const ALL_PROJECTS: Project[] = [
   templateUrl: './projects.component.html',
 })
 export class ProjectsComponent {
-  filterTags = ['All', 'Web App', 'Management', 'Next.js', 'PHP', 'Python', 'Java'];
+  filterTags = ['All', 'Web App', 'Management', 'Next.js', 'PHP', 'Python', 'Java', 'SaaS', 'Docker', 'Supabase', 'WEKA'];
   activeFilter = 'All';
 
   get filteredProjects() {
