@@ -9,8 +9,8 @@
                 P
             </span>
             <span class="flex flex-col leading-tight">
-                <span class="font-display text-[1.05rem] font-bold tracking-[-0.01em] text-[#14202B]">JAY</span>
-                <span class="font-sans text-[0.68rem] text-[#3B4750]">นักพัฒนาเว็บ</span>
+                <span class="font-display text-[0.95rem] font-bold tracking-[-0.01em] text-[#ffffff]">JAY</span>
+                <span class="font-sans text-[0.68rem] text-[#55636F]">นักพัฒนาเว็บ</span>
             </span>
         </a>
 
@@ -19,7 +19,7 @@
             <li *ngFor="let link of navLinks">
                 <a [routerLink]="link.path" routerLinkActive="text-[#14202B] font-semibold"
                     [routerLinkActiveOptions]="{ exact: link.path === '/' }"
-                    class="group relative flex items-center px-4 py-2 font-sans text-[0.92rem] text-[#3B4750] no-underline transition-colors duration-200 hover:text-[#14202B]">
+                    class="group relative flex items-center px-4 py-2 font-sans text-[0.92rem] text-[#55636F] no-underline transition-colors duration-200 hover:text-[#14202B]">
                     {{ link.label }}
                     <span
                         class="absolute bottom-0 left-4 right-4 h-px origin-left scale-x-0 bg-[#2955C8] transition-transform duration-200 group-hover:scale-x-100"></span>
@@ -28,7 +28,7 @@
         </ul>
 
         <!-- Status -->
-        <p class="hidden items-center gap-2 font-sans text-[0.82rem] text-[#3B4750] lg:flex">
+        <p class="hidden items-center gap-2 font-sans text-[0.82rem] text-[#55636F] lg:flex">
             <span class="relative flex h-1.5 w-1.5">
                 <span class="pulse absolute inline-flex h-full w-full rounded-full bg-[#2955C8] opacity-60"></span>
                 <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#2955C8]"></span>
@@ -64,7 +64,7 @@
         <ul class="m-0 list-none px-6 py-2">
             <li *ngFor="let link of navLinks" class="border-b border-[#DCE2E5] last:border-0">
                 <a [routerLink]="link.path" routerLinkActive="text-[#14202B] font-semibold" (click)="closeMenu()"
-                    class="flex items-center py-4 font-sans text-[0.98rem] text-[#3B4750] no-underline transition-colors duration-200 hover:text-[#14202B]">
+                    class="flex items-center py-4 font-sans text-[0.98rem] text-[#55636F] no-underline transition-colors duration-200 hover:text-[#14202B]">
                     {{ link.label }}
                 </a>
             </li>
