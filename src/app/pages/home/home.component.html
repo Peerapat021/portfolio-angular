@@ -1,230 +1,229 @@
-<!-- ═══════════════════════════════════════════════════ HOME PAGE ══ -->
-<section class="relative min-h-screen flex flex-col justify-center overflow-hidden bg-[#03050a]">
+<!-- ═════════════════════════════════════════════ HERO / IDENTITY ══ -->
+<section class="hero relative overflow-hidden bg-[#0E1117] pt-28 pb-16 md:pt-32 md:pb-20">
 
-    <!-- Grid background -->
-    <div class="absolute inset-0 pointer-events-none" style="background-image: linear-gradient(rgba(0,245,255,0.03) 1px, transparent 1px),
-                                 linear-gradient(90deg, rgba(0,245,255,0.03) 1px, transparent 1px);
-              background-size: 60px 60px;"></div>
+    <!-- blueprint grid (decorative) -->
+    <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-[0.55]" style="background-image:linear-gradient(rgba(122,162,247,.045) 1px,transparent 1px),
+                               linear-gradient(90deg,rgba(122,162,247,.045) 1px,transparent 1px);
+              background-size:88px 88px;
+              mask-image:radial-gradient(ellipse 80% 60% at 30% 0%,#000 30%,transparent 78%);
+              -webkit-mask-image:radial-gradient(ellipse 80% 60% at 30% 0%,#000 30%,transparent 78%);"></div>
 
-    <!-- Radial glow -->
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full pointer-events-none"
-        style="background: radial-gradient(circle, rgba(0,245,255,0.04) 0%, transparent 70%);"></div>
+    <div class="relative mx-auto w-full max-w-[1120px] px-6">
+        <div class="reveal grid gap-12 lg:grid-cols-[minmax(0,1fr)_240px] lg:gap-16 lg:items-start">
 
-    <!-- Corner decorations -->
-    <div class="absolute top-24 left-8 font-mono text-[0.55rem] text-cyan/20 tracking-widest leading-relaxed">
-        SYS://PORTFOLIO_V2<br>
-        STATUS::ONLINE<br>
-        LOC::TH/BKK
-    </div>
-    <div
-        class="absolute top-24 right-8 font-mono text-[0.55rem] text-cyan/20 tracking-widest text-right leading-relaxed">
-        NODE::FRONTEND<br>
-        STACK::NEXT_TS<br>
-        UPTIME::∞
-    </div>
-
-    <!-- Main content -->
-    <div class="relative w-full max-w-[1400px] mx-auto px-6 pt-32 pb-20">
-        <div class="grid lg:grid-cols-[1fr_auto] gap-12 xl:gap-20 items-center">
-
-            <!-- LEFT: text -->
+            <!-- ── identity ── -->
             <div>
-                <!-- Pre-title -->
-                <div class="flex items-center gap-3 mb-6 animate-fade-in-up" style="animation-delay:0.1s">
-                    <span class="block w-8 h-px bg-cyan/50"></span>
-                    <span class="font-mono text-cyan text-[0.65rem] tracking-[0.35em] uppercase">Initializing...</span>
-                </div>
-
-                <!-- Name -->
-                <h1 class="font-display font-black uppercase leading-none mb-2 animate-fade-in-up"
-                    style="animation-delay:0.2s">
-                    <span class="block text-snow"
-                        style="font-size:clamp(2.8rem,8vw,7rem); letter-spacing:-0.02em; text-shadow: 0 0 80px rgba(0,245,255,0.12);">
-                        PEERAPAT
+                <!-- availability -->
+                <p
+                    class="mb-7 inline-flex items-center gap-2.5 rounded-full border border-[#9ECE6A]/25 bg-[#9ECE6A]/[0.07] py-1.5 pl-2.5 pr-3.5">
+                    <span class="relative flex h-2 w-2">
+                        <span
+                            class="ping absolute inline-flex h-full w-full rounded-full bg-[#9ECE6A] opacity-60"></span>
+                        <span class="relative inline-flex h-2 w-2 rounded-full bg-[#9ECE6A]"></span>
                     </span>
-                    <span class="block" style="font-size:clamp(2.8rem,8vw,7rem); letter-spacing:-0.02em;
-                       -webkit-text-stroke: 1px rgba(0,245,255,0.4); color:transparent;">
-                        KALLABUT
-                    </span>
-                </h1>
-
-                <!-- Role typewriter -->
-                <div class="flex items-center gap-2 mb-10 animate-fade-in-up" style="animation-delay:0.35s">
-                    <span class="font-mono text-cyan/40 text-sm">&gt;</span>
-                    <span class="font-mono text-cyan text-sm md:text-base tracking-widest" id="typewriter">Web
-                        Developer</span>
-                    <span class="inline-block w-0.5 h-4 bg-cyan animate-pulse"></span>
-                </div>
-
-                <!-- Description -->
-                <p class="max-w-xl font-mono text-snow/40 text-[0.75rem] leading-relaxed tracking-wide mb-12 animate-fade-in-up"
-                    style="animation-delay:0.45s">
-                    Full-process developer · System analysis · DB design ·<br>
-                    Backend API · Frontend implementation · 2 yrs exp.
+                    <span class="font-sans text-[0.78rem] font-medium text-[#9ECE6A]">{{ availability }}</span>
                 </p>
 
-                <!-- CTAs -->
-                <div class="flex flex-wrap items-center gap-4 animate-fade-in-up" style="animation-delay:0.55s">
+                <!-- name -->
+                <h1
+                    class="font-display text-[clamp(2.4rem,6.5vw,4.25rem)] font-bold leading-[0.95] tracking-[-0.035em] text-[#E6EAF2]">
+                    Peerapat<br class="hidden sm:block" /> Kallabut
+                </h1>
+
+                <!-- role + value proposition -->
+                <p class="mt-5 max-w-[46ch] font-sans text-[1.05rem] leading-[1.7] text-[#B4BDCC]">
+                    <span class="font-semibold text-[#7AA2F7]">Full-stack web developer</span> ที่ทำงานได้ตลอดเส้นทาง
+                    ตั้งแต่เก็บ requirement และวิเคราะห์ระบบ ออกแบบฐานข้อมูล เขียน API
+                    ไปจนถึงต่อหน้าบ้านให้ใช้งานได้จริง
+                </p>
+                <p class="mt-3 max-w-[46ch] font-sans text-[0.95rem] leading-[1.7] text-[#8A93A6]">
+                    ประสบการณ์ 2 ปี กับงานสายธุรกิจ — ระบบเช่ารถ, POS และคลังสินค้า
+                    โฟกัสที่ความถูกต้องของข้อมูลและระบบที่ทีมหลังบ้านใช้งานต่อเองได้
+                </p>
+
+                <!-- actions -->
+                <div class="mt-9 flex flex-wrap items-center gap-3">
                     <a [routerLink]="['/projects']"
-                        class="relative overflow-hidden flex items-center gap-2 no-underline border border-cyan text-[#03050a] bg-cyan font-mono text-[0.7rem] tracking-[0.2em] uppercase px-7 py-3 transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,245,255,0.5)] group">
-                        <span>View Projects</span>
-                        <svg class="w-3 h-3 transition-transform group-hover:translate-x-0.5" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="2.5">
-                            <path d="M5 12h14M12 5l7 7-7 7" />
+                        class="btn-primary inline-flex items-center gap-2 rounded-[4px] bg-[#7AA2F7] px-5 py-3 font-sans text-[0.9rem] font-semibold text-[#0E1117] no-underline transition-colors duration-200 hover:bg-[#9BB8FF]">
+                        ดูผลงานที่ทำมา
+                    </a>
+                    <a [attr.href]="contact.resume" download
+                        class="btn-ghost inline-flex items-center gap-2 rounded-[4px] border border-[#2A3140] px-5 py-3 font-sans text-[0.9rem] font-medium text-[#E6EAF2] no-underline transition-colors duration-200 hover:border-[#7AA2F7]/60 hover:text-[#7AA2F7]">
+                        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+                            aria-hidden="true">
+                            <path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16" stroke-linecap="round"
+                                stroke-linejoin="round" />
                         </svg>
+                        ดาวน์โหลดเรซูเม่
                     </a>
-                    <a [routerLink]="['/about']"
-                        class="relative overflow-hidden flex items-center gap-2 no-underline border border-cyan/30 text-cyan font-mono text-[0.7rem] tracking-[0.2em] uppercase px-7 py-3 transition-all duration-300 hover:border-cyan hover:shadow-[0_0_20px_rgba(0,245,255,0.15)] group">
-                        <span>About Me</span>
-                        <span
-                            class="absolute inset-0 bg-cyan/5 translate-x-[-100%] group-hover:translate-x-0 transition-transform duration-300"></span>
+                    <a [attr.href]="'mailto:' + contact.email"
+                        class="btn-ghost inline-flex items-center px-2 py-3 font-sans text-[0.9rem] font-medium text-[#8A93A6] no-underline underline-offset-4 transition-colors duration-200 hover:text-[#E6EAF2] hover:underline">
+                        {{ contact.email }}
                     </a>
                 </div>
 
-                <!-- Tech stack pills -->
-                <div class="flex flex-wrap gap-2 mt-16 animate-fade-in-up" style="animation-delay:0.7s">
-                    <span *ngFor="let tech of techStack"
-                        class="font-mono text-[0.6rem] tracking-[0.2em] uppercase px-3 py-1 border border-snow/10 text-snow/30 hover:border-cyan/40 hover:text-cyan/70 transition-all duration-200 cursor-default">
-                        {{ tech }}
-                    </span>
-                </div>
+                <!-- quick facts -->
+                <dl
+                    class="mt-10 grid max-w-[520px] grid-cols-2 gap-x-8 gap-y-5 border-t border-[#1D222D] pt-7 sm:grid-cols-3">
+                    <div *ngFor="let fact of quickFacts">
+                        <dt class="font-mono text-[0.68rem] tracking-[0.08em] text-[#6C7689]">{{ fact.label }}</dt>
+                        <dd class="mt-1 font-sans text-[0.92rem] font-medium text-[#E6EAF2]">{{ fact.value }}</dd>
+                    </div>
+                </dl>
             </div>
 
-            <!-- RIGHT: profile image -->
-            <div class="hidden lg:flex justify-center items-center animate-fade-in-up" style="animation-delay:0.3s">
-                <div class="relative w-[360px] xl:w-[420px]">
-
-                    <!-- Corner brackets -->
-                    <div class="absolute -top-3 -left-3 w-7 h-7 border-t-2 border-l-2 border-cyan/70 z-10"></div>
-                    <div class="absolute -top-3 -right-3 w-7 h-7 border-t-2 border-r-2 border-cyan/70 z-10"></div>
-                    <div class="absolute -bottom-3 -left-3 w-7 h-7 border-b-2 border-l-2 border-cyan/70 z-10"></div>
-                    <div class="absolute -bottom-3 -right-3 w-7 h-7 border-b-2 border-r-2 border-cyan/70 z-10"></div>
-
-                    <!-- Image container -->
-                    <div class="relative overflow-hidden border border-cyan/20"
-                        style="box-shadow: 0 0 60px rgba(0,245,255,0.1), 0 0 120px rgba(0,245,255,0.04);">
-
-                        <!-- Scan line overlay -->
-                        <div class="absolute inset-0 pointer-events-none z-10 overflow-hidden">
-                            <div class="absolute left-0 right-0 h-[2px] bg-cyan/10"
-                                style="animation: scanline 4s linear infinite;"></div>
-                        </div>
-
-                        <!-- Cyan tint overlay -->
-                        <div class="absolute inset-0 z-10 pointer-events-none"
-                            style="background: linear-gradient(180deg, rgba(0,245,255,0.03) 0%, transparent 50%, rgba(0,0,0,0.35) 100%);">
-                        </div>
-
-                        <img src="jay5.png" alt="Peerapat Kallabut"
-                            class="w-full h-auto block object-cover grayscale"
-                            style="filter: grayscale(20%) contrast(1.05) brightness(0.9);" />
-                    </div>
-
-                    <!-- Label underneath -->
-                    <div class="mt-3 flex items-center justify-between px-1">
-                        <span class="font-mono text-[0.5rem] text-cyan/30 tracking-[0.3em] uppercase">ID::PKB_DEV</span>
-                        <span
-                            class="flex items-center gap-1.5 font-mono text-[0.5rem] text-cyan/50 tracking-widest uppercase">
-                            <span class="w-1 h-1 rounded-full bg-cyan shadow-[0_0_4px_#00f5ff] animate-pulse"></span>
-                            Active
-                        </span>
-                    </div>
+            <!-- ── photo plate ── -->
+            <figure class="order-first w-[140px] shrink-0 sm:w-[170px] lg:order-none lg:w-full">
+                <div class="relative overflow-hidden rounded-[6px] border border-[#242B38] bg-[#151A23]">
+                    <img src="jay5.png" alt="รูปถ่ายของ Peerapat Kallabut"
+                        class="block aspect-[4/5] w-full object-cover object-top" />
                 </div>
-            </div>
+                <figcaption class="mt-3 flex items-center justify-between font-mono text-[0.66rem] text-[#6C7689]">
+                    <span>Bangkok, TH</span>
+                    <span class="text-[#7AA2F7]/70">GMT+7</span>
+                </figcaption>
+            </figure>
 
-        </div><!-- /grid -->
-    </div>
-
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce-slow">
-        <span class="font-mono text-[0.5rem] text-cyan/30 tracking-[0.4em] uppercase">Scroll</span>
-        <div class="w-px h-8 bg-gradient-to-b from-cyan/30 to-transparent"></div>
-    </div>
-
-    <!-- Bottom stats bar -->
-    <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-cyan/20 to-transparent">
-    </div>
-    <div class="absolute bottom-4 right-8 font-mono text-[0.5rem] text-cyan/15 tracking-widest">
-        PKB::DEV · 2024
-    </div>
-</section>
-
-<!-- ═══════════ STATS STRIP ══ -->
-<section class="relative bg-[#03050a] border-y border-cyan/10 py-10 overflow-hidden">
-    <div class="absolute inset-0 pointer-events-none"
-        style="background:linear-gradient(90deg, transparent, rgba(0,245,255,0.02), transparent)"></div>
-    <div class="w-full max-w-[1400px] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
-        <div *ngFor="let stat of stats" class="flex flex-col items-center gap-1 group">
-            <span
-                class="font-display font-black text-cyan text-3xl md:text-4xl group-hover:text-shadow-cyan transition-all"
-                style="text-shadow: 0 0 20px rgba(0,245,255,0.3);">
-                {{ stat.value }}
-            </span>
-            <span class="font-mono text-[0.6rem] tracking-[0.25em] uppercase text-snow/30">{{ stat.label }}</span>
         </div>
     </div>
 </section>
 
-<!-- ═══════════ FEATURED PROJECTS PREVIEW ══ -->
-<section class="relative bg-[#03050a] py-24 overflow-hidden">
-    <div class="w-full max-w-[1400px] mx-auto px-6">
+<!-- ═════════════════════════════════════════════ SELECTED WORK ══ -->
+<section class="bg-[#0E1117] py-20 md:py-24">
+    <div class="mx-auto w-full max-w-[1120px] px-6">
 
-        <div class="flex items-center justify-between mb-14">
+        <header class="mb-10 flex flex-wrap items-end justify-between gap-4 border-b border-[#1D222D] pb-5">
             <div>
-                <div class="flex items-center gap-3 mb-3">
-                    <span class="block w-6 h-px bg-cyan/50"></span>
-                    <span class="font-mono text-cyan/60 text-[0.6rem] tracking-[0.35em] uppercase">Featured Work</span>
-                </div>
-                <h2 class="font-display font-black text-snow text-3xl md:text-4xl uppercase tracking-tight">Recent
-                    Projects</h2>
+                <h2 class="font-display text-[1.75rem] font-bold tracking-[-0.02em] text-[#E6EAF2]">ผลงานที่เลือกมา</h2>
+                <p class="mt-2 font-sans text-[0.95rem] text-[#8A93A6]">
+                    ระบบที่ทำเองตั้งแต่ออกแบบฐานข้อมูลจนถึงหน้าใช้งาน</p>
             </div>
             <a [routerLink]="['/projects']"
-                class="hidden md:flex items-center gap-2 no-underline font-mono text-[0.65rem] text-cyan/50 tracking-[0.2em] uppercase hover:text-cyan transition-colors">
-                All Projects <span>→</span>
+                class="btn-ghost font-sans text-[0.88rem] font-medium text-[#7AA2F7] no-underline underline-offset-4 hover:underline">
+                ดูทั้งหมด
             </a>
-        </div>
+        </header>
 
-        <div class="grid md:grid-cols-2 gap-6">
-            <a *ngFor="let proj of featuredProjects; let i = index" [routerLink]="['/projects', proj.id]"
-                class="no-underline group relative border border-snow/10 hover:border-cyan/40 bg-[#060a0f] p-8 transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,245,255,0.06)] overflow-hidden">
+        <ul class="grid gap-5 md:grid-cols-2">
+            <li *ngFor="let proj of featuredProjects">
+                <a [routerLink]="['/projects', proj.id]"
+                    class="card group flex h-full flex-col rounded-[6px] border border-[#1D222D] bg-[#12161E] p-7 no-underline transition-colors duration-200 hover:border-[#7AA2F7]/45">
 
-                <!-- Corner bracket -->
-                <div
-                    class="absolute top-0 left-0 w-4 h-4 border-t border-l border-cyan/40 group-hover:border-cyan transition-colors duration-300">
+                    <div class="mb-5 flex items-center justify-between gap-3">
+                        <span class="font-mono text-[0.68rem] text-[#6C7689]">{{ proj.year }}</span>
+                        <span
+                            class="rounded-full border border-[#2A3140] px-2.5 py-0.5 font-mono text-[0.66rem] text-[#8A93A6]">
+                            {{ proj.role }}
+                        </span>
+                    </div>
+
+                    <h3
+                        class="font-display text-[1.28rem] font-semibold leading-snug tracking-[-0.015em] text-[#E6EAF2] transition-colors duration-200 group-hover:text-[#7AA2F7]">
+                        {{ proj.name }}
+                    </h3>
+                    <p class="mt-2.5 font-sans text-[0.92rem] leading-[1.65] text-[#8A93A6]">{{ proj.desc }}</p>
+
+                    <ul class="mt-5 space-y-2">
+                        <li *ngFor="let point of proj.highlights"
+                            class="flex gap-2.5 font-sans text-[0.88rem] leading-[1.55] text-[#B4BDCC]">
+                            <span class="mt-[0.55em] h-[3px] w-[3px] shrink-0 rounded-full bg-[#E0AF68]"></span>
+                            {{ point }}
+                        </li>
+                    </ul>
+
+                    <ul class="mt-6 flex flex-wrap gap-x-2 gap-y-1.5 pt-5 border-t border-[#1D222D]">
+                        <li *ngFor="let t of proj.stack" class="font-mono text-[0.68rem] text-[#6C7689]">{{ t }}</li>
+                    </ul>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<!-- ═════════════════════════════════════════════ WHAT I OWN ══ -->
+<section class="border-y border-[#1D222D] bg-[#111621] py-20 md:py-24">
+    <div class="mx-auto w-full max-w-[1120px] px-6">
+
+        <h2 class="font-display text-[1.75rem] font-bold tracking-[-0.02em] text-[#E6EAF2]">งานที่รับผิดชอบเองได้</h2>
+        <p class="mt-2 max-w-[52ch] font-sans text-[0.95rem] leading-[1.7] text-[#8A93A6]">
+            ที่ผ่านมาทำเป็นเจ้าของงานตั้งแต่ต้นจนจบ ไม่ได้รับเฉพาะ task ที่แตกมาแล้ว
+        </p>
+
+        <dl class="mt-10 divide-y divide-[#1D222D] border-t border-[#1D222D]">
+            <div *ngFor="let cap of capabilities" class="grid gap-2 py-6 md:grid-cols-[220px_minmax(0,1fr)] md:gap-10">
+                <dt class="font-display text-[1.02rem] font-semibold text-[#E6EAF2]">{{ cap.title }}</dt>
+                <dd class="max-w-[62ch] font-sans text-[0.93rem] leading-[1.7] text-[#8A93A6]">{{ cap.detail }}</dd>
+            </div>
+        </dl>
+    </div>
+</section>
+
+<!-- ═════════════════════════════════════════════ STACK ══ -->
+<section class="bg-[#0E1117] py-20 md:py-24">
+    <div class="mx-auto w-full max-w-[1120px] px-6">
+
+        <h2 class="font-display text-[1.75rem] font-bold tracking-[-0.02em] text-[#E6EAF2]">เครื่องมือที่ใช้ทำงาน</h2>
+
+        <dl class="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div *ngFor="let group of stackGroups">
+                <dt class="border-b border-[#1D222D] pb-2.5 font-mono text-[0.72rem] tracking-[0.06em] text-[#7AA2F7]">
+                    {{ group.label }}
+                </dt>
+                <dd class="mt-3.5">
+                    <ul class="space-y-2">
+                        <li *ngFor="let item of group.items" class="font-sans text-[0.92rem] text-[#B4BDCC]">{{ item }}
+                        </li>
+                    </ul>
+                </dd>
+            </div>
+        </dl>
+    </div>
+</section>
+
+<!-- ═════════════════════════════════════════════ CONTACT ══ -->
+<section class="border-t border-[#1D222D] bg-[#111621] py-20 md:py-24">
+    <div class="mx-auto w-full max-w-[1120px] px-6">
+        <div class="grid gap-10 md:grid-cols-[minmax(0,1fr)_auto] md:items-end">
+
+            <div>
+                <h2
+                    class="max-w-[20ch] font-display text-[clamp(1.75rem,3.6vw,2.5rem)] font-bold leading-tight tracking-[-0.025em] text-[#E6EAF2]">
+                    กำลังมองหาคนที่ดูแลระบบได้ทั้งหน้าบ้านและหลังบ้านอยู่ไหม
+                </h2>
+                <p class="mt-4 max-w-[48ch] font-sans text-[0.98rem] leading-[1.7] text-[#8A93A6]">
+                    ยินดีคุยเรื่องตำแหน่งงาน รายละเอียดโปรเจกต์ หรือขอดูโค้ดเพิ่มเติม
+                    ตอบกลับภายใน 1 วันทำการ
+                </p>
+
+                <div class="mt-8 flex flex-wrap gap-3">
+                    <a [attr.href]="'mailto:' + contact.email"
+                        class="btn-primary inline-flex items-center rounded-[4px] bg-[#7AA2F7] px-5 py-3 font-sans text-[0.9rem] font-semibold text-[#0E1117] no-underline transition-colors duration-200 hover:bg-[#9BB8FF]">
+                        ส่งอีเมลหาผม
+                    </a>
+                    <a [attr.href]="contact.github" target="_blank" rel="noopener"
+                        class="btn-ghost inline-flex items-center rounded-[4px] border border-[#2A3140] px-5 py-3 font-sans text-[0.9rem] font-medium text-[#E6EAF2] no-underline transition-colors duration-200 hover:border-[#7AA2F7]/60 hover:text-[#7AA2F7]">
+                        GitHub
+                    </a>
+                    <a [attr.href]="contact.linkedin" target="_blank" rel="noopener"
+                        class="btn-ghost inline-flex items-center rounded-[4px] border border-[#2A3140] px-5 py-3 font-sans text-[0.9rem] font-medium text-[#E6EAF2] no-underline transition-colors duration-200 hover:border-[#7AA2F7]/60 hover:text-[#7AA2F7]">
+                        LinkedIn
+                    </a>
                 </div>
-                <div
-                    class="absolute bottom-0 right-0 w-4 h-4 border-b border-r border-cyan/40 group-hover:border-cyan transition-colors duration-300">
-                </div>
+            </div>
 
-                <div class="flex items-start justify-between mb-6">
-                    <span class="font-mono text-[0.55rem] text-cyan/40 tracking-widest">PROJECT_{{ i < 9 ? '0' : '' }}{{
-                            i+1 }}</span>
-                            <span class="font-mono text-[0.55rem] text-snow/20 tracking-wider">{{ proj.stack[0]
-                                }}</span>
+            <!-- metrics: ตัวเลขสรุป -->
+            <dl class="grid grid-cols-2 gap-x-10 gap-y-6 sm:grid-cols-4 md:grid-cols-2 md:gap-x-12">
+                <div *ngFor="let stat of stats">
+                    <dt class="sr-only">{{ stat.label }}</dt>
+                    <dd>
+                        <span
+                            class="block font-display text-[2rem] font-bold leading-none tracking-[-0.03em] text-[#E0AF68]">{{
+                            stat.value }}</span>
+                        <span class="mt-2 block font-sans text-[0.82rem] text-[#8A93A6]">{{ stat.label }}</span>
+                    </dd>
                 </div>
+            </dl>
 
-                <h3
-                    class="font-display font-black text-snow text-xl uppercase tracking-tight mb-3 group-hover:text-cyan transition-colors duration-300">
-                    {{ proj.name }}
-                </h3>
-                <p class="font-mono text-snow/40 text-[0.7rem] leading-relaxed mb-6">{{ proj.desc }}</p>
-
-                <div class="flex flex-wrap gap-2">
-                    <span *ngFor="let t of proj.stack"
-                        class="font-mono text-[0.55rem] tracking-widest uppercase px-2 py-0.5 border border-cyan/20 text-cyan/50">
-                        {{ t }}
-                    </span>
-                </div>
-
-                <!-- Hover arrow -->
-                <div
-                    class="absolute bottom-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    <svg class="w-4 h-4 text-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="2">
-                        <path d="M7 17L17 7M17 7H7M17 7v10" />
-                    </svg>
-                </div>
-            </a>
         </div>
     </div>
 </section>
