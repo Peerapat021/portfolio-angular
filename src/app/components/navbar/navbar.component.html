@@ -1,34 +1,35 @@
-<nav class="fixed inset-x-0 top-0 z-50 h-[72px]"
-    [ngClass]="isScrolled ? 'bg-[#EDF1F4]/95 backdrop-blur-sm border-b border-[#C9D2D8]' : 'border-b border-transparent'">
+<nav class="fixed inset-x-0 top-0 z-50 h-[72px]" [ngClass]="isScrolled
+       ? 'is-scrolled bg-[#EDF1F4]/95 backdrop-blur-sm border-b border-[#C9D2D8]'
+       : 'is-top border-b border-transparent'">
     <div class="mx-auto flex h-full w-full max-w-[1160px] items-center gap-8 px-6">
 
         <!-- Logo -->
         <a [routerLink]="['/']" (click)="closeMenu()" class="mr-auto flex items-center gap-3 no-underline group">
             <span
-                class="flex h-8 w-8 items-center justify-center border border-[#2955C8]/50 text-[0.7rem] font-bold text-[#2955C8] transition-colors duration-200 group-hover:border-[#2955C8]">
+                class="brand-mark flex h-8 w-8 items-center justify-center border text-[0.7rem] font-bold transition-colors duration-200">
                 P
             </span>
             <span class="flex flex-col leading-tight">
-                <span class="font-display text-[0.95rem] font-bold tracking-[-0.01em] text-[#ffffff]">JAY</span>
-                <span class="font-sans text-[0.68rem] text-[#55636F]">นักพัฒนาเว็บ</span>
+                <span class="brand-name font-display text-[1.05rem] font-bold tracking-[-0.01em]">JAY</span>
+                <span class="brand-tagline font-sans text-[0.68rem]">นักพัฒนาเว็บ</span>
             </span>
         </a>
 
         <!-- Desktop links -->
         <ul class="m-0 hidden list-none items-center gap-1 p-0 md:flex">
             <li *ngFor="let link of navLinks">
-                <a [routerLink]="link.path" routerLinkActive="text-[#14202B] font-semibold"
+                <a [routerLink]="link.path" routerLinkActive="nav-link-active font-semibold"
                     [routerLinkActiveOptions]="{ exact: link.path === '/' }"
-                    class="group relative flex items-center px-4 py-2 font-sans text-[0.92rem] text-[#55636F] no-underline transition-colors duration-200 hover:text-[#14202B]">
+                    class="nav-link group relative flex items-center px-4 py-2 font-sans text-[0.92rem] no-underline transition-colors duration-200">
                     {{ link.label }}
                     <span
-                        class="absolute bottom-0 left-4 right-4 h-px origin-left scale-x-0 bg-[#2955C8] transition-transform duration-200 group-hover:scale-x-100"></span>
+                        class="nav-underline absolute bottom-0 left-4 right-4 h-px origin-left scale-x-0 transition-transform duration-200 group-hover:scale-x-100"></span>
                 </a>
             </li>
         </ul>
 
         <!-- Status -->
-        <p class="hidden items-center gap-2 font-sans text-[0.82rem] text-[#55636F] lg:flex">
+        <p class="status-text hidden items-center gap-2 font-sans text-[0.82rem] lg:flex">
             <span class="relative flex h-1.5 w-1.5">
                 <span class="pulse absolute inline-flex h-full w-full rounded-full bg-[#2955C8] opacity-60"></span>
                 <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#2955C8]"></span>
@@ -38,7 +39,7 @@
 
         <!-- CTA -->
         <a href="mailto:peerapatkallabut@gmail.com"
-            class="hidden items-center gap-2 border border-[#C9D2D8] px-5 py-2.5 font-sans text-[0.88rem] font-medium text-[#14202B] no-underline transition-colors duration-200 hover:border-[#2955C8] hover:text-[#2955C8] md:flex">
+            class="cta-link hidden items-center gap-2 border px-5 py-2.5 font-sans text-[0.88rem] font-medium no-underline transition-colors duration-200 md:flex">
             ติดต่อ
             <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                 aria-hidden="true">
@@ -49,22 +50,22 @@
         <!-- Hamburger -->
         <button class="flex h-9 w-9 flex-col items-end justify-center gap-[5px] border-none bg-transparent md:hidden"
             (click)="toggleMenu()" [attr.aria-expanded]="isMenuOpen" aria-label="เปิด/ปิดเมนู">
-            <span class="h-px bg-[#14202B] transition-all duration-200"
+            <span class="burger-bar h-px transition-all duration-200"
                 [ngClass]="isMenuOpen ? 'w-6 rotate-45 translate-y-[6.5px]' : 'w-6'"></span>
-            <span class="h-px bg-[#14202B] transition-all duration-200"
+            <span class="burger-bar h-px transition-all duration-200"
                 [ngClass]="isMenuOpen ? 'w-0 opacity-0' : 'w-4'"></span>
-            <span class="h-px bg-[#14202B] transition-all duration-200"
+            <span class="burger-bar h-px transition-all duration-200"
                 [ngClass]="isMenuOpen ? 'w-6 -rotate-45 -translate-y-[6.5px]' : 'w-5'"></span>
         </button>
     </div>
 
-    <!-- Mobile menu -->
+    <!-- Mobile menu: พื้นทึบเสมอ ไม่ต้องสลับสีตามสถานะ scroll -->
     <div class="overflow-hidden border-b border-[#C9D2D8] bg-[#EDF1F4] transition-[max-height,opacity] duration-300 md:hidden"
         [ngClass]="isMenuOpen ? 'max-h-[380px] opacity-100' : 'max-h-0 opacity-0'">
         <ul class="m-0 list-none px-6 py-2">
             <li *ngFor="let link of navLinks" class="border-b border-[#DCE2E5] last:border-0">
                 <a [routerLink]="link.path" routerLinkActive="text-[#14202B] font-semibold" (click)="closeMenu()"
-                    class="flex items-center py-4 font-sans text-[0.98rem] text-[#55636F] no-underline transition-colors duration-200 hover:text-[#14202B]">
+                    class="flex items-center py-4 font-sans text-[0.98rem] text-[#3B4750] no-underline transition-colors duration-200 hover:text-[#14202B]">
                     {{ link.label }}
                 </a>
             </li>
