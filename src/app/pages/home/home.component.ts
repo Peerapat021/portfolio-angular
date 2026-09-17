@@ -13,14 +13,14 @@ import { NgFor } from '@angular/common';
       font-family: 'Archivo', 'Anuphan', system-ui, -apple-system, sans-serif;
       font-feature-settings: 'tnum' 1;
       display: block;
-      background: #F7F7F5;
-      color: #101214;
+      background: #0A0D12;
+      color: #ECEFF4;
       -webkit-font-smoothing: antialiased;
     }
 
     /* โฟกัสด้วยคีย์บอร์ดต้องมองเห็นชัด */
     a:focus-visible {
-      outline: 2px solid #7C8F6E;
+      outline: 2px solid #22D3EE;
       outline-offset: 3px;
     }
 
