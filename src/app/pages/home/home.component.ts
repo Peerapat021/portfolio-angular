@@ -9,37 +9,32 @@ import { NgFor } from '@angular/common';
   templateUrl: './home.component.html',
   styles: [`
     :host {
-      /* ถ้าโหลดฟอนต์จาก Google Fonts แล้ว (ดูหมายเหตุใน index.html) จะได้หน้าตาตามที่ออกแบบ */
-      --font-display: 'IBM Plex Sans', 'Noto Sans Thai', system-ui, sans-serif;
-      --font-sans: 'IBM Plex Sans', 'Noto Sans Thai', system-ui, sans-serif;
-      --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
+      /* Archivo = ตัวละติน (grotesque หนาแน่น) · Anuphan = ตัวไทยที่รูปทรงเข้ากัน */
+      font-family: 'Archivo', 'Anuphan', system-ui, -apple-system, sans-serif;
+      font-feature-settings: 'tnum' 1;
       display: block;
-      background: #0E1117;
+      background: #F7F7F5;
+      color: #101214;
+      -webkit-font-smoothing: antialiased;
     }
 
-    :host ::ng-deep .font-display { font-family: var(--font-display); }
-    :host ::ng-deep .font-sans    { font-family: var(--font-sans); }
-    :host ::ng-deep .font-mono    { font-family: var(--font-mono); }
-
-    /* โฟกัสด้วยคีย์บอร์ดต้องมองเห็นชัด (ใช้จริงตอน HR กด Tab ดู) */
+    /* โฟกัสด้วยคีย์บอร์ดต้องมองเห็นชัด */
     a:focus-visible {
-      outline: 2px solid #7AA2F7;
+      outline: 2px solid #D6321F;
       outline-offset: 3px;
-      border-radius: 4px;
     }
 
     /* motion มีจุดเดียว: hero เผยตัวตอนโหลด */
-    .reveal {
-      animation: reveal .6s cubic-bezier(.2, .7, .3, 1) both;
-    }
+    .reveal { animation: reveal .55s cubic-bezier(.2, .7, .3, 1) both; }
+    .reveal + .reveal { animation-delay: .08s; }
     @keyframes reveal {
-      from { opacity: 0; transform: translateY(14px); }
+      from { opacity: 0; transform: translateY(12px); }
       to   { opacity: 1; transform: none; }
     }
 
     .ping { animation: ping 2.4s cubic-bezier(0, 0, .2, 1) infinite; }
     @keyframes ping {
-      75%, 100% { transform: scale(2.2); opacity: 0; }
+      75%, 100% { transform: scale(2.4); opacity: 0; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -50,7 +45,7 @@ import { NgFor } from '@angular/common';
 })
 export class HomeComponent {
 
-  availability = 'พร้อมเริ่มงาน • รับพิจารณาตำแหน่ง Full-stack / Backend';
+  availability = 'พร้อมเริ่มงาน · รับพิจารณาตำแหน่ง Full-stack และ Backend';
 
   /** แก้ค่าตรงนี้ให้เป็นของจริงก่อนเอาไปใช้สมัครงาน */
   contact = {
@@ -88,7 +83,7 @@ export class HomeComponent {
     },
     {
       title: 'ทำหน้าเว็บให้ใช้งานจริง',
-      detail: 'ประกอบ UI ที่ตอบสนองทุกขนาดจอ เชื่อม API และจัดการสถานะโหลด/ข้อผิดพลาดให้ผู้ใช้เข้าใจได้',
+      detail: 'ประกอบ UI ที่ตอบสนองทุกขนาดจอ เชื่อม API และจัดการสถานะโหลดกับข้อผิดพลาดให้ผู้ใช้เข้าใจได้',
     },
   ];
 
@@ -121,7 +116,7 @@ export class HomeComponent {
       desc: 'ระบบ POS พร้อมการจัดการสต็อกสำหรับธุรกิจ SME ใช้งานได้ตั้งแต่แคชเชียร์จนถึงฝ่ายคลัง',
       highlights: [
         'ตัดสต็อกอัตโนมัติทุกครั้งที่ขาย พร้อมประวัติการเคลื่อนไหวสินค้า',
-        'รายงานยอดขายรายวัน/รายเดือนสำหรับเจ้าของกิจการ',
+        'รายงานยอดขายรายวันและรายเดือนสำหรับเจ้าของกิจการ',
         'กำหนดสิทธิ์การเข้าถึงตามบทบาทของพนักงาน',
       ],
       stack: ['PHP', 'JavaScript', 'MySQL', 'Tailwind CSS'],

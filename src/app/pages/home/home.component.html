@@ -1,54 +1,47 @@
 <!-- ═════════════════════════════════════════════ HERO / IDENTITY ══ -->
-<section class="hero relative overflow-hidden bg-[#0E1117] pt-28 pb-16 md:pt-32 md:pb-20">
+<section class="bg-[#F7F7F5] pt-28 pb-16 md:pt-36 md:pb-20">
+    <div class="mx-auto w-full max-w-[1180px] px-6">
 
-    <!-- blueprint grid (decorative) -->
-    <div aria-hidden="true" class="pointer-events-none absolute inset-0 opacity-[0.55]" style="background-image:linear-gradient(rgba(122,162,247,.045) 1px,transparent 1px),
-                               linear-gradient(90deg,rgba(122,162,247,.045) 1px,transparent 1px);
-              background-size:88px 88px;
-              mask-image:radial-gradient(ellipse 80% 60% at 30% 0%,#000 30%,transparent 78%);
-              -webkit-mask-image:radial-gradient(ellipse 80% 60% at 30% 0%,#000 30%,transparent 78%);"></div>
+        <!-- availability -->
+        <p class="reveal mb-10 flex items-center gap-2.5">
+            <span class="relative flex h-2 w-2">
+                <span class="ping absolute inline-flex h-full w-full rounded-full bg-[#D6321F] opacity-50"></span>
+                <span class="relative inline-flex h-2 w-2 rounded-full bg-[#D6321F]"></span>
+            </span>
+            <span class="text-[0.82rem] font-medium tracking-[0.01em] text-[#D6321F]">{{ availability }}</span>
+        </p>
 
-    <div class="relative mx-auto w-full max-w-[1120px] px-6">
-        <div class="reveal grid gap-12 lg:grid-cols-[minmax(0,1fr)_240px] lg:gap-16 lg:items-start">
+        <div class="reveal grid gap-12 lg:grid-cols-[minmax(0,1fr)_200px] lg:gap-20 lg:items-end">
 
-            <!-- ── identity ── -->
             <div>
-                <!-- availability -->
-                <p
-                    class="mb-7 inline-flex items-center gap-2.5 rounded-full border border-[#9ECE6A]/25 bg-[#9ECE6A]/[0.07] py-1.5 pl-2.5 pr-3.5">
-                    <span class="relative flex h-2 w-2">
-                        <span
-                            class="ping absolute inline-flex h-full w-full rounded-full bg-[#9ECE6A] opacity-60"></span>
-                        <span class="relative inline-flex h-2 w-2 rounded-full bg-[#9ECE6A]"></span>
-                    </span>
-                    <span class="font-sans text-[0.78rem] font-medium text-[#9ECE6A]">{{ availability }}</span>
-                </p>
-
-                <!-- name -->
+                <!-- name: จุดที่กล้าที่สุดของหน้า -->
                 <h1
-                    class="font-display text-[clamp(2.4rem,6.5vw,4.25rem)] font-bold leading-[0.95] tracking-[-0.035em] text-[#E6EAF2]">
-                    Peerapat<br class="hidden sm:block" /> Kallabut
+                    class="text-[clamp(2.7rem,8.5vw,5.75rem)] font-extrabold leading-[0.88] tracking-[-0.045em] text-[#101214]">
+                    Peerapat<br />Kallabut
                 </h1>
 
+                <div class="mt-8 h-px w-full bg-[#101214]"></div>
+
                 <!-- role + value proposition -->
-                <p class="mt-5 max-w-[46ch] font-sans text-[1.05rem] leading-[1.7] text-[#B4BDCC]">
-                    <span class="font-semibold text-[#7AA2F7]">Full-stack web developer</span> ที่ทำงานได้ตลอดเส้นทาง
-                    ตั้งแต่เก็บ requirement และวิเคราะห์ระบบ ออกแบบฐานข้อมูล เขียน API
-                    ไปจนถึงต่อหน้าบ้านให้ใช้งานได้จริง
-                </p>
-                <p class="mt-3 max-w-[46ch] font-sans text-[0.95rem] leading-[1.7] text-[#8A93A6]">
-                    ประสบการณ์ 2 ปี กับงานสายธุรกิจ — ระบบเช่ารถ, POS และคลังสินค้า
-                    โฟกัสที่ความถูกต้องของข้อมูลและระบบที่ทีมหลังบ้านใช้งานต่อเองได้
-                </p>
+                <div class="mt-8 grid gap-6 md:grid-cols-2 md:gap-12">
+                    <p class="max-w-[42ch] text-[1.08rem] font-medium leading-[1.65] text-[#101214]">
+                        Full-stack web developer ที่ทำงานได้ตลอดเส้นทาง ตั้งแต่เก็บ requirement
+                        และวิเคราะห์ระบบ ออกแบบฐานข้อมูล เขียน API ไปจนถึงต่อหน้าบ้านให้ใช้งานได้จริง
+                    </p>
+                    <p class="max-w-[44ch] text-[0.96rem] leading-[1.75] text-[#6B7078]">
+                        ประสบการณ์ 2 ปีกับงานสายธุรกิจ — ระบบเช่ารถ, POS และคลังสินค้า
+                        โฟกัสที่ความถูกต้องของข้อมูลและระบบที่ทีมหลังบ้านใช้งานต่อเองได้
+                    </p>
+                </div>
 
                 <!-- actions -->
-                <div class="mt-9 flex flex-wrap items-center gap-3">
+                <div class="mt-10 flex flex-wrap items-center gap-3">
                     <a [routerLink]="['/projects']"
-                        class="btn-primary inline-flex items-center gap-2 rounded-[4px] bg-[#7AA2F7] px-5 py-3 font-sans text-[0.9rem] font-semibold text-[#0E1117] no-underline transition-colors duration-200 hover:bg-[#9BB8FF]">
+                        class="inline-flex items-center bg-[#101214] px-6 py-3.5 text-[0.92rem] font-semibold text-[#F7F7F5] no-underline transition-colors duration-200 hover:bg-[#D6321F]">
                         ดูผลงานที่ทำมา
                     </a>
                     <a [attr.href]="contact.resume" download
-                        class="btn-ghost inline-flex items-center gap-2 rounded-[4px] border border-[#2A3140] px-5 py-3 font-sans text-[0.9rem] font-medium text-[#E6EAF2] no-underline transition-colors duration-200 hover:border-[#7AA2F7]/60 hover:text-[#7AA2F7]">
+                        class="inline-flex items-center gap-2 border border-[#101214] px-6 py-3.5 text-[0.92rem] font-semibold text-[#101214] no-underline transition-colors duration-200 hover:bg-[#101214] hover:text-[#F7F7F5]">
                         <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
                             aria-hidden="true">
                             <path d="M12 3v12m0 0 4-4m-4 4-4-4M4 19h16" stroke-linecap="round"
@@ -57,82 +50,75 @@
                         ดาวน์โหลดเรซูเม่
                     </a>
                     <a [attr.href]="'mailto:' + contact.email"
-                        class="btn-ghost inline-flex items-center px-2 py-3 font-sans text-[0.9rem] font-medium text-[#8A93A6] no-underline underline-offset-4 transition-colors duration-200 hover:text-[#E6EAF2] hover:underline">
+                        class="inline-flex items-center px-2 py-3.5 text-[0.92rem] font-medium text-[#6B7078] no-underline underline-offset-[5px] transition-colors duration-200 hover:text-[#D6321F] hover:underline">
                         {{ contact.email }}
                     </a>
                 </div>
-
-                <!-- quick facts -->
-                <dl
-                    class="mt-10 grid max-w-[520px] grid-cols-2 gap-x-8 gap-y-5 border-t border-[#1D222D] pt-7 sm:grid-cols-3">
-                    <div *ngFor="let fact of quickFacts">
-                        <dt class="font-mono text-[0.68rem] tracking-[0.08em] text-[#6C7689]">{{ fact.label }}</dt>
-                        <dd class="mt-1 font-sans text-[0.92rem] font-medium text-[#E6EAF2]">{{ fact.value }}</dd>
-                    </div>
-                </dl>
             </div>
 
-            <!-- ── photo plate ── -->
-            <figure class="order-first w-[140px] shrink-0 sm:w-[170px] lg:order-none lg:w-full">
-                <div class="relative overflow-hidden rounded-[6px] border border-[#242B38] bg-[#151A23]">
-                    <img src="jay5.png" alt="รูปถ่ายของ Peerapat Kallabut"
-                        class="block aspect-[4/5] w-full object-cover object-top" />
-                </div>
-                <figcaption class="mt-3 flex items-center justify-between font-mono text-[0.66rem] text-[#6C7689]">
+            <!-- photo -->
+            <figure class="order-first w-[132px] shrink-0 sm:w-[160px] lg:order-none lg:w-full">
+                <img src="img-jj2.png" alt="รูปถ่ายของ Peerapat Kallabut"
+                    class="block aspect-[4/5] w-full border border-[#DDDDD8] object-cover object-top" />
+                <figcaption class="mt-2.5 flex items-center justify-between text-[0.75rem] text-[#6B7078]">
                     <span>Bangkok, TH</span>
-                    <span class="text-[#7AA2F7]/70">GMT+7</span>
+                    <span>GMT+7</span>
                 </figcaption>
             </figure>
 
         </div>
+
+        <!-- quick facts -->
+        <dl class="mt-16 grid gap-y-6 border-t border-[#DDDDD8] pt-7 sm:grid-cols-3 sm:gap-x-12">
+            <div *ngFor="let fact of quickFacts">
+                <dt class="text-[0.78rem] text-[#6B7078]">{{ fact.label }}</dt>
+                <dd class="mt-1 text-[0.98rem] font-semibold text-[#101214]">{{ fact.value }}</dd>
+            </div>
+        </dl>
     </div>
 </section>
 
 <!-- ═════════════════════════════════════════════ SELECTED WORK ══ -->
-<section class="bg-[#0E1117] py-20 md:py-24">
-    <div class="mx-auto w-full max-w-[1120px] px-6">
+<section class="bg-[#F7F7F5] pb-20 pt-4 md:pb-28">
+    <div class="mx-auto w-full max-w-[1180px] px-6">
 
-        <header class="mb-10 flex flex-wrap items-end justify-between gap-4 border-b border-[#1D222D] pb-5">
+        <header class="mb-12 flex flex-wrap items-end justify-between gap-4 border-t-2 border-[#101214] pt-6">
             <div>
-                <h2 class="font-display text-[1.75rem] font-bold tracking-[-0.02em] text-[#E6EAF2]">ผลงานที่เลือกมา</h2>
-                <p class="mt-2 font-sans text-[0.95rem] text-[#8A93A6]">
-                    ระบบที่ทำเองตั้งแต่ออกแบบฐานข้อมูลจนถึงหน้าใช้งาน</p>
+                <h2 class="text-[1.9rem] font-extrabold tracking-[-0.03em] text-[#101214]">ผลงานที่เลือกมา</h2>
+                <p class="mt-2 text-[0.98rem] text-[#6B7078]">ระบบที่ทำเองตั้งแต่ออกแบบฐานข้อมูลจนถึงหน้าใช้งาน</p>
             </div>
             <a [routerLink]="['/projects']"
-                class="btn-ghost font-sans text-[0.88rem] font-medium text-[#7AA2F7] no-underline underline-offset-4 hover:underline">
+                class="text-[0.9rem] font-semibold text-[#101214] no-underline underline-offset-[5px] transition-colors duration-200 hover:text-[#D6321F] hover:underline">
                 ดูทั้งหมด
             </a>
         </header>
 
-        <ul class="grid gap-5 md:grid-cols-2">
-            <li *ngFor="let proj of featuredProjects">
+        <ul class="grid gap-px bg-[#DDDDD8] md:grid-cols-2">
+            <li *ngFor="let proj of featuredProjects" class="bg-[#F7F7F5]">
                 <a [routerLink]="['/projects', proj.id]"
-                    class="card group flex h-full flex-col rounded-[6px] border border-[#1D222D] bg-[#12161E] p-7 no-underline transition-colors duration-200 hover:border-[#7AA2F7]/45">
+                    class="group flex h-full flex-col bg-[#FDFDFC] p-8 no-underline transition-colors duration-200 hover:bg-[#FFFFFF] md:p-10">
 
-                    <div class="mb-5 flex items-center justify-between gap-3">
-                        <span class="font-mono text-[0.68rem] text-[#6C7689]">{{ proj.year }}</span>
-                        <span
-                            class="rounded-full border border-[#2A3140] px-2.5 py-0.5 font-mono text-[0.66rem] text-[#8A93A6]">
-                            {{ proj.role }}
-                        </span>
+                    <div class="mb-6 flex items-center justify-between gap-3">
+                        <span class="text-[0.78rem] text-[#6B7078]">{{ proj.year }}</span>
+                        <span class="text-[0.78rem] font-medium text-[#101214]">{{ proj.role }}</span>
                     </div>
 
                     <h3
-                        class="font-display text-[1.28rem] font-semibold leading-snug tracking-[-0.015em] text-[#E6EAF2] transition-colors duration-200 group-hover:text-[#7AA2F7]">
+                        class="text-[1.4rem] font-bold leading-snug tracking-[-0.025em] text-[#101214] transition-colors duration-200 group-hover:text-[#D6321F]">
                         {{ proj.name }}
                     </h3>
-                    <p class="mt-2.5 font-sans text-[0.92rem] leading-[1.65] text-[#8A93A6]">{{ proj.desc }}</p>
+                    <p class="mt-3 text-[0.95rem] leading-[1.7] text-[#6B7078]">{{ proj.desc }}</p>
 
-                    <ul class="mt-5 space-y-2">
+                    <ul class="mt-6 space-y-2.5">
                         <li *ngFor="let point of proj.highlights"
-                            class="flex gap-2.5 font-sans text-[0.88rem] leading-[1.55] text-[#B4BDCC]">
-                            <span class="mt-[0.55em] h-[3px] w-[3px] shrink-0 rounded-full bg-[#E0AF68]"></span>
+                            class="flex gap-3 text-[0.92rem] leading-[1.6] text-[#101214]">
+                            <span class="mt-[0.68em] h-px w-3 shrink-0 bg-[#D6321F]"></span>
                             {{ point }}
                         </li>
                     </ul>
 
-                    <ul class="mt-6 flex flex-wrap gap-x-2 gap-y-1.5 pt-5 border-t border-[#1D222D]">
-                        <li *ngFor="let t of proj.stack" class="font-mono text-[0.68rem] text-[#6C7689]">{{ t }}</li>
+                    <ul class="mt-auto flex flex-wrap gap-x-4 gap-y-1.5 border-t border-[#E6E6E1] pt-6 mt-8">
+                        <li *ngFor="let t of proj.stack" class="text-[0.8rem] text-[#6B7078]">{{ t }}</li>
                     </ul>
                 </a>
             </li>
@@ -141,38 +127,37 @@
 </section>
 
 <!-- ═════════════════════════════════════════════ WHAT I OWN ══ -->
-<section class="border-y border-[#1D222D] bg-[#111621] py-20 md:py-24">
-    <div class="mx-auto w-full max-w-[1120px] px-6">
+<section class="bg-[#EFEFEC] py-20 md:py-28">
+    <div class="mx-auto w-full max-w-[1180px] px-6">
 
-        <h2 class="font-display text-[1.75rem] font-bold tracking-[-0.02em] text-[#E6EAF2]">งานที่รับผิดชอบเองได้</h2>
-        <p class="mt-2 max-w-[52ch] font-sans text-[0.95rem] leading-[1.7] text-[#8A93A6]">
+        <h2 class="text-[1.9rem] font-extrabold tracking-[-0.03em] text-[#101214]">งานที่รับผิดชอบเองได้</h2>
+        <p class="mt-2 max-w-[52ch] text-[0.98rem] leading-[1.7] text-[#6B7078]">
             ที่ผ่านมาทำเป็นเจ้าของงานตั้งแต่ต้นจนจบ ไม่ได้รับเฉพาะ task ที่แตกมาแล้ว
         </p>
 
-        <dl class="mt-10 divide-y divide-[#1D222D] border-t border-[#1D222D]">
-            <div *ngFor="let cap of capabilities" class="grid gap-2 py-6 md:grid-cols-[220px_minmax(0,1fr)] md:gap-10">
-                <dt class="font-display text-[1.02rem] font-semibold text-[#E6EAF2]">{{ cap.title }}</dt>
-                <dd class="max-w-[62ch] font-sans text-[0.93rem] leading-[1.7] text-[#8A93A6]">{{ cap.detail }}</dd>
+        <dl class="mt-12 border-t border-[#D5D5CF]">
+            <div *ngFor="let cap of capabilities"
+                class="grid gap-2 border-b border-[#D5D5CF] py-7 md:grid-cols-[260px_minmax(0,1fr)] md:gap-12">
+                <dt class="text-[1.05rem] font-bold tracking-[-0.015em] text-[#101214]">{{ cap.title }}</dt>
+                <dd class="max-w-[62ch] text-[0.95rem] leading-[1.75] text-[#5C6169]">{{ cap.detail }}</dd>
             </div>
         </dl>
     </div>
 </section>
 
 <!-- ═════════════════════════════════════════════ STACK ══ -->
-<section class="bg-[#0E1117] py-20 md:py-24">
-    <div class="mx-auto w-full max-w-[1120px] px-6">
+<section class="bg-[#F7F7F5] py-20 md:py-28">
+    <div class="mx-auto w-full max-w-[1180px] px-6">
 
-        <h2 class="font-display text-[1.75rem] font-bold tracking-[-0.02em] text-[#E6EAF2]">เครื่องมือที่ใช้ทำงาน</h2>
+        <h2 class="text-[1.9rem] font-extrabold tracking-[-0.03em] text-[#101214]">เครื่องมือที่ใช้ทำงาน</h2>
 
-        <dl class="mt-10 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-4">
+        <dl class="mt-12 grid gap-x-10 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
             <div *ngFor="let group of stackGroups">
-                <dt class="border-b border-[#1D222D] pb-2.5 font-mono text-[0.72rem] tracking-[0.06em] text-[#7AA2F7]">
-                    {{ group.label }}
+                <dt class="border-b border-[#101214] pb-2.5 text-[0.88rem] font-bold text-[#101214]">{{ group.label }}
                 </dt>
-                <dd class="mt-3.5">
-                    <ul class="space-y-2">
-                        <li *ngFor="let item of group.items" class="font-sans text-[0.92rem] text-[#B4BDCC]">{{ item }}
-                        </li>
+                <dd class="mt-4">
+                    <ul class="space-y-2.5">
+                        <li *ngFor="let item of group.items" class="text-[0.95rem] text-[#5C6169]">{{ item }}</li>
                     </ul>
                 </dd>
             </div>
@@ -181,45 +166,42 @@
 </section>
 
 <!-- ═════════════════════════════════════════════ CONTACT ══ -->
-<section class="border-t border-[#1D222D] bg-[#111621] py-20 md:py-24">
-    <div class="mx-auto w-full max-w-[1120px] px-6">
-        <div class="grid gap-10 md:grid-cols-[minmax(0,1fr)_auto] md:items-end">
+<section class="bg-[#101214] py-20 text-[#F7F7F5] md:py-28">
+    <div class="mx-auto w-full max-w-[1180px] px-6">
+        <div class="grid gap-14 md:grid-cols-[minmax(0,1fr)_auto] md:items-end md:gap-20">
 
             <div>
                 <h2
-                    class="max-w-[20ch] font-display text-[clamp(1.75rem,3.6vw,2.5rem)] font-bold leading-tight tracking-[-0.025em] text-[#E6EAF2]">
+                    class="max-w-[19ch] text-[clamp(1.9rem,4vw,2.9rem)] font-extrabold leading-[1.1] tracking-[-0.035em]">
                     กำลังมองหาคนที่ดูแลระบบได้ทั้งหน้าบ้านและหลังบ้านอยู่ไหม
                 </h2>
-                <p class="mt-4 max-w-[48ch] font-sans text-[0.98rem] leading-[1.7] text-[#8A93A6]">
-                    ยินดีคุยเรื่องตำแหน่งงาน รายละเอียดโปรเจกต์ หรือขอดูโค้ดเพิ่มเติม
-                    ตอบกลับภายใน 1 วันทำการ
+                <p class="mt-5 max-w-[48ch] text-[1rem] leading-[1.75] text-[#A7ABB2]">
+                    ยินดีคุยเรื่องตำแหน่งงาน รายละเอียดโปรเจกต์ หรือขอดูโค้ดเพิ่มเติม ตอบกลับภายใน 1 วันทำการ
                 </p>
 
-                <div class="mt-8 flex flex-wrap gap-3">
+                <div class="mt-9 flex flex-wrap gap-3">
                     <a [attr.href]="'mailto:' + contact.email"
-                        class="btn-primary inline-flex items-center rounded-[4px] bg-[#7AA2F7] px-5 py-3 font-sans text-[0.9rem] font-semibold text-[#0E1117] no-underline transition-colors duration-200 hover:bg-[#9BB8FF]">
+                        class="inline-flex items-center bg-[#F7F7F5] px-6 py-3.5 text-[0.92rem] font-semibold text-[#101214] no-underline transition-colors duration-200 hover:bg-[#D6321F] hover:text-[#F7F7F5]">
                         ส่งอีเมลหาผม
                     </a>
                     <a [attr.href]="contact.github" target="_blank" rel="noopener"
-                        class="btn-ghost inline-flex items-center rounded-[4px] border border-[#2A3140] px-5 py-3 font-sans text-[0.9rem] font-medium text-[#E6EAF2] no-underline transition-colors duration-200 hover:border-[#7AA2F7]/60 hover:text-[#7AA2F7]">
+                        class="inline-flex items-center border border-[#3A3D42] px-6 py-3.5 text-[0.92rem] font-medium text-[#F7F7F5] no-underline transition-colors duration-200 hover:border-[#F7F7F5]">
                         GitHub
                     </a>
                     <a [attr.href]="contact.linkedin" target="_blank" rel="noopener"
-                        class="btn-ghost inline-flex items-center rounded-[4px] border border-[#2A3140] px-5 py-3 font-sans text-[0.9rem] font-medium text-[#E6EAF2] no-underline transition-colors duration-200 hover:border-[#7AA2F7]/60 hover:text-[#7AA2F7]">
+                        class="inline-flex items-center border border-[#3A3D42] px-6 py-3.5 text-[0.92rem] font-medium text-[#F7F7F5] no-underline transition-colors duration-200 hover:border-[#F7F7F5]">
                         LinkedIn
                     </a>
                 </div>
             </div>
 
-            <!-- metrics: ตัวเลขสรุป -->
-            <dl class="grid grid-cols-2 gap-x-10 gap-y-6 sm:grid-cols-4 md:grid-cols-2 md:gap-x-12">
+            <dl class="grid grid-cols-2 gap-x-10 gap-y-7 sm:grid-cols-4 md:grid-cols-2 md:gap-x-14">
                 <div *ngFor="let stat of stats">
                     <dt class="sr-only">{{ stat.label }}</dt>
                     <dd>
-                        <span
-                            class="block font-display text-[2rem] font-bold leading-none tracking-[-0.03em] text-[#E0AF68]">{{
-                            stat.value }}</span>
-                        <span class="mt-2 block font-sans text-[0.82rem] text-[#8A93A6]">{{ stat.label }}</span>
+                        <span class="block text-[2.4rem] font-extrabold leading-none tracking-[-0.04em]">{{ stat.value
+                            }}</span>
+                        <span class="mt-2.5 block text-[0.84rem] text-[#A7ABB2]">{{ stat.label }}</span>
                     </dd>
                 </div>
             </dl>
