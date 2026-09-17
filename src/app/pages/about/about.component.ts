@@ -13,10 +13,16 @@ export class AboutComponent {
     { key: 'name', value: 'Peerapat Kallabut' },
     { key: 'nickname', value: 'Jay' },
     { key: 'role', value: 'Web Developer' },
-    { key: 'email', value: '<a href="mailto:peerapatkallabut@gmail.com" class="text-cyan hover:underline">peerapatkallabut@gmail.com</a>' },
+    {
+      key: 'email',
+      value: '<a href="mailto:peerapatkallabut@gmail.com" class="text-[#2955C8] hover:underline">peerapatkallabut@gmail.com</a>',
+    },
     { key: 'phone', value: '096-9683-547' },
-    { key: 'location', value: 'Thailand 🇹🇭' },
-    { key: 'available', value: '<span class="text-cyan flex items-center gap-1.5"><span class="inline-block w-1.5 h-1.5 rounded-full bg-cyan shadow-[0_0_6px_#00f5ff] animate-pulse"></span>Open to opportunities</span>' },
+    { key: 'location', value: 'Thailand' },
+    {
+      key: 'available',
+      value: '<span class="text-[#2955C8] inline-flex items-center gap-1.5"><span class="inline-block w-1.5 h-1.5 rounded-full bg-[#2955C8]"></span>Open to opportunities</span>',
+    },
   ];
 
   skillCategories = [
