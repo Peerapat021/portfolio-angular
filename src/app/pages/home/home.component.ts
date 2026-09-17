@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgFor } from '@angular/common';
 
@@ -9,43 +9,66 @@ import { NgFor } from '@angular/common';
   templateUrl: './home.component.html',
   styles: [`
     :host {
-      /* Archivo = ตัวละติน (grotesque หนาแน่น) · Anuphan = ตัวไทยที่รูปทรงเข้ากัน */
-      font-family: 'Archivo', 'Anuphan', system-ui, -apple-system, sans-serif;
-      font-feature-settings: 'tnum' 1;
+      /* Space Grotesk = หัวข้อ/ตัวเลข (เส้นสายเรขาคณิตแบบงานเขียนแบบ) */
+      /* IBM Plex Sans / Sans Thai = เนื้อหา · IBM Plex Mono = ข้อมูล/ตัวเลขจริงเท่านั้น */
+      --font-display: 'Space Grotesk', 'IBM Plex Sans Thai', system-ui, sans-serif;
+      --font-sans: 'IBM Plex Sans', 'IBM Plex Sans Thai', system-ui, sans-serif;
+      --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
       display: block;
-      background: #0A0A0F;
-      color: #F5F7FA;
+      background: #EDF1F4;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* โฟกัสด้วยคีย์บอร์ดต้องมองเห็นชัด */
+    :host ::ng-deep .font-display { font-family: var(--font-display); }
+    :host ::ng-deep .font-sans    { font-family: var(--font-sans); }
+    :host ::ng-deep .font-mono    { font-family: var(--font-mono); }
+
     a:focus-visible {
-      outline: 2px solid #38BDF8;
+      outline: 2px solid #2955C8;
       outline-offset: 3px;
     }
 
-    /* motion มีจุดเดียว: hero เผยตัวตอนโหลด */
-    .reveal { animation: reveal .55s cubic-bezier(.2, .7, .3, 1) both; }
-    .reveal + .reveal { animation-delay: .08s; }
-    @keyframes reveal {
-      from { opacity: 0; transform: translateY(12px); }
-      to   { opacity: 1; transform: none; }
-    }
-
-    .ping { animation: ping 2.4s cubic-bezier(0, 0, .2, 1) infinite; }
-    @keyframes ping {
+    /* จุดสถานะ: กะพริบเบา ๆ สื่อว่า "พร้อมตอนนี้" */
+    .pulse { animation: pulse 2.4s cubic-bezier(0, 0, .2, 1) infinite; }
+    @keyframes pulse {
       75%, 100% { transform: scale(2.4); opacity: 0; }
     }
 
+    /* จุดที่กล้าที่สุดของหน้า: เส้นไทม์ไลน์กระบวนการทำงานค่อย ๆ ต่อกันทีละขั้น
+       เล่นครั้งเดียวตอนเลื่อนมาถึง ไม่ใช่ทุกครั้งที่ hover */
+    .pipeline-step {
+      opacity: 0;
+      transform: translateY(10px);
+      border-color: transparent;
+      transition: opacity .5s ease, transform .5s ease, border-color .5s ease .1s;
+    }
+    .pipeline-step .node {
+      transform: scale(0);
+      transition: transform .35s cubic-bezier(.34,1.56,.64,1) .3s;
+    }
+    :host ::ng-deep .pipeline-in-view .pipeline-step {
+      opacity: 1;
+      transform: none;
+      border-color: #C4CDD3;
+    }
+    :host ::ng-deep .pipeline-in-view .pipeline-step .node {
+      transform: scale(1);
+    }
+
     @media (prefers-reduced-motion: reduce) {
-      .reveal, .ping { animation: none; }
-      * { transition-duration: .01ms !important; }
+      .pulse { animation: none; }
+      .pipeline-step, .pipeline-step .node {
+        opacity: 1; transform: none; transition: none; border-color: #C4CDD3;
+      }
     }
   `],
 })
-export class HomeComponent {
+export class HomeComponent implements AfterViewInit {
+
+  @ViewChild('pipelineSection') pipelineSection?: ElementRef<HTMLElement>;
 
   availability = 'พร้อมเริ่มงาน · รับพิจารณาตำแหน่ง Full-stack และ Backend';
+  lastUpdated = 'กันยายน 2569';
 
   /** แก้ค่าตรงนี้ให้เป็นของจริงก่อนเอาไปใช้สมัครงาน */
   contact = {
@@ -55,12 +78,6 @@ export class HomeComponent {
     resume: 'assets/peerapat-kallabut-resume.pdf',
   };
 
-  quickFacts = [
-    { label: 'ฐานที่ทำงาน', value: 'กรุงเทพฯ / ทำงานทางไกลได้' },
-    { label: 'ประสบการณ์', value: '2 ปี' },
-    { label: 'ถนัดที่สุด', value: 'Next.js + Laravel + MySQL' },
-  ];
-
   stats = [
     { value: '2', label: 'ปีประสบการณ์' },
     { value: '4', label: 'ระบบที่ส่งมอบแล้ว' },
@@ -68,22 +85,23 @@ export class HomeComponent {
     { value: '5', label: 'เฟรมเวิร์กที่เคยใช้' },
   ];
 
-  capabilities = [
+  /** สี่ขั้นตอนจริงที่ทำในทุกโปรเจกต์ เรียงตามลำดับที่ลงมือทำจริง */
+  pipeline = [
     {
       title: 'วิเคราะห์ระบบ',
-      detail: 'คุยกับผู้ใช้เพื่อเก็บ requirement แปลงเป็น flow และขอบเขตงานที่ชัดเจน ก่อนเริ่มเขียนโค้ด',
+      detail: 'คุยกับผู้ใช้เพื่อเก็บ requirement แปลงเป็น flow และขอบเขตงานที่ชัดเจนก่อนเริ่มเขียนโค้ด',
     },
     {
       title: 'ออกแบบฐานข้อมูล',
-      detail: 'ออกแบบ schema แบบ normalize วาง index และความสัมพันธ์ของตารางให้รองรับรายงานและการขยายระบบภายหลัง',
+      detail: 'ออกแบบ schema แบบ normalize วาง index และความสัมพันธ์ของตารางให้รองรับรายงานและการขยายระบบ',
     },
     {
       title: 'พัฒนา Backend API',
-      detail: 'เขียน REST API พร้อมระบบยืนยันตัวตน สิทธิ์การใช้งานตามบทบาท และการตรวจสอบข้อมูลฝั่งเซิร์ฟเวอร์',
+      detail: 'เขียน REST API พร้อมระบบยืนยันตัวตน สิทธิ์การใช้งานตามบทบาท และตรวจสอบข้อมูลฝั่งเซิร์ฟเวอร์',
     },
     {
       title: 'ทำหน้าเว็บให้ใช้งานจริง',
-      detail: 'ประกอบ UI ที่ตอบสนองทุกขนาดจอ เชื่อม API และจัดการสถานะโหลดกับข้อผิดพลาดให้ผู้ใช้เข้าใจได้',
+      detail: 'ประกอบ UI ที่ตอบสนองทุกขนาดจอ เชื่อม API และจัดการสถานะโหลด/ข้อผิดพลาดให้ผู้ใช้เข้าใจได้',
     },
   ];
 
@@ -122,4 +140,24 @@ export class HomeComponent {
       stack: ['PHP', 'JavaScript', 'MySQL', 'Tailwind CSS'],
     },
   ];
+
+  ngAfterViewInit(): void {
+    const el = this.pipelineSection?.nativeElement;
+    if (!el || typeof IntersectionObserver === 'undefined') {
+      el?.classList.add('pipeline-in-view');
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            el.classList.add('pipeline-in-view');
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.3 },
+    );
+    observer.observe(el);
+  }
 }
