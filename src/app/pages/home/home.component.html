@@ -5,10 +5,10 @@
         <!-- availability -->
         <p class="reveal mb-10 flex items-center gap-2.5">
             <span class="relative flex h-2 w-2">
-                <span class="ping absolute inline-flex h-full w-full rounded-full bg-[#D6321F] opacity-50"></span>
-                <span class="relative inline-flex h-2 w-2 rounded-full bg-[#D6321F]"></span>
+                <span class="ping absolute inline-flex h-full w-full rounded-full bg-[#7C8F6E] opacity-50"></span>
+                <span class="relative inline-flex h-2 w-2 rounded-full bg-[#7C8F6E]"></span>
             </span>
-            <span class="text-[0.82rem] font-medium tracking-[0.01em] text-[#D6321F]">{{ availability }}</span>
+            <span class="text-[0.82rem] font-medium tracking-[0.01em] text-[#7C8F6E]">{{ availability }}</span>
         </p>
 
         <div class="reveal grid gap-12 lg:grid-cols-[minmax(0,1fr)_200px] lg:gap-20 lg:items-end">
@@ -37,7 +37,7 @@
                 <!-- actions -->
                 <div class="mt-10 flex flex-wrap items-center gap-3">
                     <a [routerLink]="['/projects']"
-                        class="inline-flex items-center bg-[#101214] px-6 py-3.5 text-[0.92rem] font-semibold text-[#F7F7F5] no-underline transition-colors duration-200 hover:bg-[#D6321F]">
+                        class="inline-flex items-center bg-[#101214] px-6 py-3.5 text-[0.92rem] font-semibold text-[#F7F7F5] no-underline transition-colors duration-200 hover:bg-[#7C8F6E]">
                         ดูผลงานที่ทำมา
                     </a>
                     <a [attr.href]="contact.resume" download
@@ -50,7 +50,7 @@
                         ดาวน์โหลดเรซูเม่
                     </a>
                     <a [attr.href]="'mailto:' + contact.email"
-                        class="inline-flex items-center px-2 py-3.5 text-[0.92rem] font-medium text-[#6B7078] no-underline underline-offset-[5px] transition-colors duration-200 hover:text-[#D6321F] hover:underline">
+                        class="inline-flex items-center px-2 py-3.5 text-[0.92rem] font-medium text-[#6B7078] no-underline underline-offset-[5px] transition-colors duration-200 hover:text-[#7C8F6E] hover:underline">
                         {{ contact.email }}
                     </a>
                 </div>
@@ -58,7 +58,7 @@
 
             <!-- photo -->
             <figure class="order-first w-[132px] shrink-0 sm:w-[160px] lg:order-none lg:w-full">
-                <img src="img-jj2.png" alt="รูปถ่ายของ Peerapat Kallabut"
+                <img src="img-jj.png" alt="รูปถ่ายของ Peerapat Kallabut"
                     class="block aspect-[4/5] w-full border border-[#DDDDD8] object-cover object-top" />
                 <figcaption class="mt-2.5 flex items-center justify-between text-[0.75rem] text-[#6B7078]">
                     <span>Bangkok, TH</span>
@@ -88,7 +88,7 @@
                 <p class="mt-2 text-[0.98rem] text-[#6B7078]">ระบบที่ทำเองตั้งแต่ออกแบบฐานข้อมูลจนถึงหน้าใช้งาน</p>
             </div>
             <a [routerLink]="['/projects']"
-                class="text-[0.9rem] font-semibold text-[#101214] no-underline underline-offset-[5px] transition-colors duration-200 hover:text-[#D6321F] hover:underline">
+                class="text-[0.9rem] font-semibold text-[#101214] no-underline underline-offset-[5px] transition-colors duration-200 hover:text-[#7C8F6E] hover:underline">
                 ดูทั้งหมด
             </a>
         </header>
@@ -104,7 +104,7 @@
                     </div>
 
                     <h3
-                        class="text-[1.4rem] font-bold leading-snug tracking-[-0.025em] text-[#101214] transition-colors duration-200 group-hover:text-[#D6321F]">
+                        class="text-[1.4rem] font-bold leading-snug tracking-[-0.025em] text-[#101214] transition-colors duration-200 group-hover:text-[#7C8F6E]">
                         {{ proj.name }}
                     </h3>
                     <p class="mt-3 text-[0.95rem] leading-[1.7] text-[#6B7078]">{{ proj.desc }}</p>
@@ -112,7 +112,7 @@
                     <ul class="mt-6 space-y-2.5">
                         <li *ngFor="let point of proj.highlights"
                             class="flex gap-3 text-[0.92rem] leading-[1.6] text-[#101214]">
-                            <span class="mt-[0.68em] h-px w-3 shrink-0 bg-[#D6321F]"></span>
+                            <span class="mt-[0.68em] h-px w-3 shrink-0 bg-[#7C8F6E]"></span>
                             {{ point }}
                         </li>
                     </ul>
@@ -181,7 +181,7 @@
 
                 <div class="mt-9 flex flex-wrap gap-3">
                     <a [attr.href]="'mailto:' + contact.email"
-                        class="inline-flex items-center bg-[#F7F7F5] px-6 py-3.5 text-[0.92rem] font-semibold text-[#101214] no-underline transition-colors duration-200 hover:bg-[#D6321F] hover:text-[#F7F7F5]">
+                        class="inline-flex items-center bg-[#F7F7F5] px-6 py-3.5 text-[0.92rem] font-semibold text-[#101214] no-underline transition-colors duration-200 hover:bg-[#7C8F6E] hover:text-[#F7F7F5]">
                         ส่งอีเมลหาผม
                     </a>
                     <a [attr.href]="contact.github" target="_blank" rel="noopener"

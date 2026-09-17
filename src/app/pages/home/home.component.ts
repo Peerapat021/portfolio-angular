@@ -20,7 +20,7 @@ import { NgFor } from '@angular/common';
 
     /* โฟกัสด้วยคีย์บอร์ดต้องมองเห็นชัด */
     a:focus-visible {
-      outline: 2px solid #D6321F;
+      outline: 2px solid #7C8F6E;
       outline-offset: 3px;
     }
 
