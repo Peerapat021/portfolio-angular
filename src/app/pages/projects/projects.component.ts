@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { NgFor, NgClass } from '@angular/common';
-
+import { NgFor, NgClass, NgIf } from '@angular/common';
 export interface Project {
   id: string;
   name: string;
@@ -115,7 +114,7 @@ export const ALL_PROJECTS: Project[] = [
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [RouterLink, NgFor, NgClass],
+  imports: [RouterLink, NgFor, NgClass, NgIf],
   templateUrl: './projects.component.html',
 })
 export class ProjectsComponent {
